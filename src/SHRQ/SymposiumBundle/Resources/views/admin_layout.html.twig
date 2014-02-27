@@ -107,7 +107,7 @@ file that was distributed with this source code.
                     </a>
 
                     {% if admin_pool is defined %}
-                        <div class="navbar-text pull-right">{% include admin_pool.getTemplate('user_block') %}</div>
+                        <div class="navbar-text pull-right">{% if app.user %}{{ app.user.username }} - <a href="{{ url('sonata_user_admin_security_logout') }}">{{ 'user_block_logout'|trans({}, 'SonataUserBundle') }}</a> {% endif %}</div>
 
                         {% block logo %}
                             <a href="{{ url('sonata_admin_dashboard') }}" class="brand">
