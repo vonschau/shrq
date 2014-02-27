@@ -34,9 +34,9 @@
                 <br>of Prague
             </h2>
             <ul class="c">
-                <li class="symbol-01"><img src="/img/symbol-01.png" alt=""></li>
-                <li class="symbol-02"><img src="/img/symbol-02.png" alt=""></li>
-                <li class="symbol-03"><img src="/img/symbol-03.png" alt=""></li>
+                <li class="symbol-01"><img src="{{ asset('bundles/shrqsymposium/img/symbol-01.png') }}" alt=""></li>
+                <li class="symbol-02"><img src="{{ asset('bundles/shrqsymposium/img/symbol-02.png') }}" alt=""></li>
+                <li class="symbol-03"><img src="{{ asset('bundles/shrqsymposium/img/symbol-03.png') }}" alt=""></li>
             </ul>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
