@@ -1,0 +1,803 @@
+/*!
+ *
+ *	Project:	ASTEN PROPERTY
+ *	Author:		Matous Barnat, www.matousbarnat.com
+ *
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+audio:not([controls]) {
+  display: none;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dd,
+dl,
+dt,
+li,
+ol,
+ul,
+fieldset,
+form,
+label,
+legend,
+button,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: inherit;
+}
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+a:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+sub,
+sup {
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.75em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  -ms-interpolation-mode: bicubic;
+}
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  *overflow: visible;
+  line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+@font-face {
+  font-family: 'AtlasGroteskRegular';
+  src: url('../fonts/atlasgrotesk-regular.eot');
+  src: url('../fonts/atlasgrotesk-regular.eot') format('embedded-opentype'), url('../fonts/atlasgrotesk-regular.woff') format('woff'), url('../fonts/atlasgrotesk-regular.ttf') format('truetype'), url('../fonts/atlasgrotesk-regular.svg#AtlasGroteskRegular') format('svg');
+}
+p {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  text-rendering: optimizelegibility;
+}
+h1,
+h2 {
+  font-size: 2.1666666666666665em;
+  margin-bottom: 0.5em;
+}
+p {
+  margin-bottom: 1em;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: none;
+}
+ol {
+  list-style: none;
+}
+dl {
+  margin-bottom: 0;
+}
+hr {
+  margin: 0;
+  border: 0;
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+small {
+  font-size: 100%;
+}
+cite {
+  font-style: normal;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  *behavior: url(js/vendor/boxsizing.htc);
+}
+html {
+  -webkit-font-smoothing: antialiased;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  background: #DEDFE0;
+  margin: 0;
+  font-size: 14px;
+  font-size: 1.4pxrem;
+  font-family: 'AtlasGroteskRegular', sans-serif;
+  color: #000000;
+}
+img {
+  max-width: 100%;
+}
+.grid-1 {
+  width: 12.5%;
+}
+.grid-2 {
+  width: 25%;
+}
+.grid-4 {
+  width: 50%;
+}
+input[type='text'],
+button {
+  display: block;
+  border: 1px solid #000;
+}
+input[type='text'] {
+  font-family: 'AtlasGroteskRegular', sans-serif;
+}
+button {
+  font-family: 'Verdana', sans-serif;
+}
+a {
+  color: #000000;
+  text-decoration: none;
+}
+.page {
+  width: 100%;
+  max-width: 1920px;
+  min-width: 1024px;
+  margin: 0 auto;
+}
+.page > header {
+  padding: 3.125%;
+}
+.page > header ul {
+  padding-bottom: 24em;
+}
+.page > header li {
+  float: left;
+  width: 33.333333333333336%;
+  text-align: center;
+}
+.page > header img {
+  position: relative;
+}
+.page > header .symbol-01 {
+  text-align: left;
+}
+.page > header .symbol-01 img {
+  top: 12em;
+}
+.page > header .symbol-02 img {
+  top: -2em;
+  text-align: center;
+}
+.page > header .symbol-03 {
+  text-align: right;
+}
+.page > header .symbol-03 img {
+  top: 22em;
+}
+.page > header form {
+  max-width: 38em;
+}
+.page > header form ul {
+  padding-bottom: 5em;
+}
+.page > header form li {
+  width: 25%;
+  margin-left: -1px;
+}
+.page > header form li:first-child {
+  width: 50%;
+  margin-left: 0;
+}
+.page > header form input[type='text'],
+.page > header form button,
+.page > header form a {
+  width: 100%;
+  display: block;
+  border: 1px solid #000;
+}
+.page > header form input[type='text'] {
+  height: 25px;
+  padding: 1px 3px 0;
+  margin-bottom: -1px;
+}
+.page > header form button,
+.page > header form a {
+  height: 49px;
+  line-height: 49px;
+  font-family: 'Verdana', sans-serif;
+  font-size: 1.25em;
+}
+.page > header form button {
+  background: #ffe100;
+  color: #000000;
+}
+.page > header form a {
+  text-decoration: none;
+  background: #007dff;
+  color: #ffffff;
+}
+#menu,
+#logged {
+  padding: 0 2em;
+  background: #ffebf5;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+#menu nav,
+#logged nav {
+  position: relative;
+  min-height: 36em;
+}
+#menu nav a,
+#logged nav a {
+  text-decoration: none;
+  display: block;
+  padding: 0.5em;
+  border: 1px solid #ffebf5;
+}
+#menu nav a.opened,
+#logged nav a.opened {
+  color: #007dff;
+  border: 1px solid #000;
+}
+#menu nav p,
+#logged nav p {
+  padding: 0.5em;
+  font-size: 0.8571428571428571em;
+}
+#menu nav ul,
+#logged nav ul {
+  position: absolute;
+}
+#menu nav ul ul,
+#logged nav ul ul,
+#menu nav ul div,
+#logged nav ul div,
+#menu nav ul form,
+#logged nav ul form {
+  display: none;
+}
+#menu nav ul ul.opened,
+#logged nav ul ul.opened,
+#menu nav ul div.opened,
+#logged nav ul div.opened,
+#menu nav ul form.opened,
+#logged nav ul form.opened {
+  display: block;
+}
+#menu nav ul ul.opened > ul,
+#logged nav ul ul.opened > ul,
+#menu nav ul div.opened > ul,
+#logged nav ul div.opened > ul,
+#menu nav ul form.opened > ul,
+#logged nav ul form.opened > ul {
+  display: block;
+}
+#menu nav .grid-1,
+#logged nav .grid-1 {
+  padding-top: 1.5em;
+}
+#menu nav .sub-1,
+#logged nav .sub-1 {
+  left: 100%;
+  top: 0;
+  width: 100%;
+  padding-top: 1.5em;
+}
+#menu nav .person-detail,
+#logged nav .person-detail {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 400%;
+  padding-right: 100%;
+  padding-top: 1.5em;
+  border-left: 1px solid #000;
+  min-height: 36em;
+  margin-left: -1px;
+}
+#menu nav .person-lessons,
+#logged nav .person-lessons {
+  position: absolute;
+  right: 0;
+  width: 25%;
+  top: 0;
+  padding-top: 1.25em;
+}
+#menu nav .lesson-details,
+#logged nav .lesson-details {
+  position: absolute;
+  left: 100%;
+  padding-top: 1.5em;
+  width: 200%;
+  top: 0;
+  border-left: 1px solid #000;
+  margin-left: -1px;
+  min-height: 36em;
+}
+#menu nav .registration-form,
+#logged nav .registration-form {
+  position: absolute;
+  left: 100%;
+  width: 400%;
+  top: 0;
+  border-left: 1px solid #000;
+  min-height: 36em;
+}
+#menu nav .registration-form > ul,
+#logged nav .registration-form > ul {
+  width: 50%;
+  margin-left: -1px;
+  min-height: 36em;
+  padding-top: 2em;
+}
+#menu nav .registration-form h2,
+#logged nav .registration-form h2 {
+  font-size: 14px;
+  padding: 0 0.4em;
+  border-bottom: 1px solid #000000;
+  min-height: 4em;
+}
+#menu nav .registration-form .radios,
+#logged nav .registration-form .radios {
+  padding: 0 0.5em;
+  font-size: 1em;
+  position: relative;
+}
+#menu nav .registration-form .radios img,
+#logged nav .registration-form .radios img {
+  position: relative;
+  top: 8px;
+}
+#menu nav .registration-form .row-1 h2,
+#logged nav .registration-form .row-1 h2 {
+  margin-bottom: -2.3em;
+}
+#menu nav .registration-form .row-2,
+#logged nav .registration-form .row-2 {
+  left: 50%;
+  margin-left: -2px;
+  border-right: 1px solid #000;
+}
+#menu nav .registration-form .row-2 .radios,
+#logged nav .registration-form .row-2 .radios {
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+}
+#menu nav .registration-form .row-2 .radios input,
+#logged nav .registration-form .row-2 .radios input {
+  position: absolute;
+  right: 0.5em;
+  top: 0.7em;
+}
+#menu nav .registration-form .row-2 .radios span,
+#logged nav .registration-form .row-2 .radios span {
+  position: absolute;
+  top: 0.5em;
+  right: 3em;
+}
+#menu nav .registration-form .row-2 h2,
+#logged nav .registration-form .row-2 h2 {
+  min-height: 3.9em;
+  margin: 0;
+}
+#menu nav .registration-form .row-2 p,
+#logged nav .registration-form .row-2 p {
+  margin: 0;
+  padding: 0.5em;
+}
+#menu nav .registration-form .heading,
+#logged nav .registration-form .heading {
+  display: block;
+  margin: 0.75em 0 0.5em;
+  padding: 0 0.5em;
+  font-size: 0.8571428571428571em;
+}
+#menu nav .registration-form input[type='text'],
+#logged nav .registration-form input[type='text'] {
+  width: 100%;
+  height: 25px;
+  margin-bottom: -1px;
+  padding: 1px 3px 0;
+}
+#menu nav .registration-form input[type='text'].half,
+#logged nav .registration-form input[type='text'].half {
+  width: 50%;
+  float: left;
+}
+#menu nav .registration-form input[type='text'].third,
+#logged nav .registration-form input[type='text'].third {
+  width: 33.333333333333336%;
+  float: left;
+}
+#menu nav .registration-form input[type='text'].twothird,
+#logged nav .registration-form input[type='text'].twothird {
+  width: 66.66666666666667%;
+  float: left;
+}
+#menu nav .registration-form select,
+#logged nav .registration-form select {
+  border: 1px solid #000;
+  padding: 3px;
+  font-family: 'AtlasGroteskRegular', sans-serif;
+  float: left;
+  margin-top: 0.5em;
+}
+#menu nav .registration-form select.half,
+#logged nav .registration-form select.half {
+  width: 50%;
+}
+#menu nav .registration-form button,
+#logged nav .registration-form button {
+  width: 100%;
+  background: #007dff;
+  color: #ffffff;
+  font-size: 1.1666666666666667em;
+  height: 6.9em;
+  border-right: 0;
+  margin-top: -1px;
+}
+#menu nav .summary,
+#logged nav .summary {
+  position: absolute;
+  left: 500%;
+  top: 0;
+  width: 200%;
+}
+#menu nav .summary > ul,
+#logged nav .summary > ul {
+  width: 100%;
+  margin-left: -2px;
+  min-height: 36em;
+  padding-top: 2em;
+  border-right: 1px solid #000;
+}
+#menu nav .summary .bordered,
+#logged nav .summary .bordered {
+  border-bottom: 1px solid #000;
+}
+#menu nav .summary h2,
+#logged nav .summary h2 {
+  font-size: 14px;
+  padding: 0 0.4em;
+  border-bottom: 1px solid #000000;
+  min-height: 3.9em;
+}
+#menu nav .summary .label,
+#logged nav .summary .label,
+#menu nav .summary .value,
+#logged nav .summary .value {
+  display: block;
+  float: left;
+  width: 50%;
+  padding: 0.44em 0.5em;
+}
+#menu nav .summary .paypal,
+#logged nav .summary .paypal {
+  background: #FF7D33;
+  color: #ffffff;
+  border: 0;
+  border-bottom: 1px solid #000;
+  text-align: center;
+  line-height: 6.8em;
+  font-size: 1.1666666666666667em;
+  height: 6.8em;
+  font-family: 'Verdana', sans-serif;
+}
+#logged {
+  background: #ffe100;
+}
+#logged nav a {
+  border-color: #ffe100;
+}
+#logged nav a.opened {
+  color: #FF7D33;
+}
+#logged ul {
+  min-height: 36em;
+}
+#logged .documents {
+  position: absolute;
+  left: 100%;
+  width: 400%;
+  top: 0;
+}
+#logged .documents > ul {
+  width: 50%;
+  border-left: 1px solid #000;
+  min-height: 36em;
+  position: absolute;
+  padding-top: 1.5em;
+}
+#logged .documents > ul > li:first-child a {
+  border-top: 1px solid #000;
+}
+#logged .documents > ul.row-2 {
+  left: 50%;
+  border-right: 1px solid #000;
+}
+#logged .documents a {
+  border-bottom: 1px solid #000;
+  position: relative;
+}
+#logged .documents a:after {
+  content: '';
+  display: block;
+  width: 67px;
+  height: 91px;
+  background: url('../img/ico-download.jpg');
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  display: none;
+}
+#logged .documents a.pdf {
+  min-height: 106px;
+  padding-right: 83px;
+}
+#logged .documents a.pdf:after {
+  display: block;
+}
+#logged .documents a.mp3 {
+  min-height: 106px;
+  padding-right: 83px;
+}
+#logged .documents a.mp3:after {
+  display: block;
+  background-position: 0 -91px;
+}
+#logged .logout {
+  position: absolute;
+  bottom: 1.5em;
+  width: 100%;
+  padding-right: 1.5em;
+}
+#logged .logout a {
+  display: block;
+  background: #DEDFE0;
+  height: 49px;
+  line-height: 49px;
+  text-align: center;
+  font-family: 'Verdana', sans-serif;
+  font-size: 1.25em;
+  border: 1px solid #000;
+  padding: 0;
+}
+#table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#table th {
+  font-weight: normal;
+  border: 1px solid #000;
+}
+#table th,
+#table td {
+  padding: 0.5em;
+  vertical-align: top;
+}
+#table tr.date {
+  font-size: 0.8571428571428571em;
+  text-align: center;
+}
+#table tr.date td {
+  border-bottom: 1px solid #DEDFE0;
+  height: 2em;
+}
+#table tr.date.pause td {
+  border-color: #000;
+}
+#table td {
+  border: 1px solid #000;
+  width: 12.5%;
+}
+#table td.no-right {
+  border-right: 1px solid #DEDFE0;
+}
+#table td[colspan='2'] {
+  width: 25%;
+}
+#table a {
+  display: block;
+  position: relative;
+  min-height: 11em;
+}
+#table a span {
+  color: #007dff;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+@media screen and (max-width: 89em) {
+  
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+.invisible {
+  visibility: hidden;
+}
+.c {
+  *zoom: 1;
+}
+.c:before,
+.c:after {
+  display: table;
+  content: "";
+}
+.c:after {
+  clear: both;
+}
+.vh {
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+.vh.focusable:active,
+.vh.focusable:focus {
+  clip: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  height: auto;
+}
+.log {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 25px;
+}

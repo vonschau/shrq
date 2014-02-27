@@ -13,8 +13,8 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     {% block includes %}
-        <link href="{{ asset('/css/style.css') }}" type="text/css" rel="stylesheet"/>
-        <link href="{{ asset('/css/addon.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('bundles/shrqsymposium/css/style.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ asset('bundles/shrqsymposium/css/addon.css') }}" type="text/css" rel="stylesheet"/>
 
         {% include "CmfCreateBundle::includecssfiles.html.twig" %}
     {% endblock %}
@@ -54,9 +54,9 @@
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write("<script src='/js/vendor/jquery-1.10.2.min.js'>\x3C/script>")</script>
+    <script>window.jQuery || document.write("<script src='{{ asset('bundles/shrqsymposium/js/vendor/jquery-1.10.2.min.js') }}'></script>")</script>
 
-    <script src="/js/global.js"></script>
+    <script src="{{ asset('bundles/shrqsymposium/js/global.js') }}"></script>
 
     {% render controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': 'en'}) %}
 </body>
