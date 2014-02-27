@@ -1,0 +1,16 @@
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <ul>
+        <li>
+    		<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Email" />
+            <input type="password" id="password" name="_password" required="required" placeholder="Password" />
+        </li>
+        <li><button type="submit">Sign in</button></li>
+        <li><a href="#">Register</a></li>
+</form>
+{% endblock fos_user_content %}

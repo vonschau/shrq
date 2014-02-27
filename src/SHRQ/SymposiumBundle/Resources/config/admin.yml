@@ -1,0 +1,31 @@
+services:
+    sonata.admin.user:
+        class: SHRQ\SymposiumBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Conference", label: "Attendees" }
+        arguments:
+            - ~
+            - SHRQ\SymposiumBundle\Entity\User
+            - ~
+        calls:
+            - [ setTranslationDomain, [SHRQSymposiumBundle]]
+    sonata.admin.news:
+        class: SHRQ\SymposiumBundle\Admin\NewsAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Conference", label: "News" }
+        arguments:
+            - ~
+            - SHRQ\SymposiumBundle\Entity\News
+            - ~
+        calls:
+            - [ setTranslationDomain, [SHRQSymposiumBundle]]
+    sonata.admin.program_update:
+        class: SHRQ\SymposiumBundle\Admin\ProgramUpdateAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Conference", label: "Program updates" }
+        arguments:
+            - ~
+            - SHRQ\SymposiumBundle\Entity\ProgramUpdate
+            - ~
+        calls:
+            - [ setTranslationDomain, [SHRQSymposiumBundle]]

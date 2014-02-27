@@ -1,0 +1,64 @@
+// UTILITY CLASSES
+// ---------------
+
+// Quick floats
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+}
+
+// Visibility
+.invisible {
+  visibility: hidden;
+}
+
+.c {
+ .clearfix();
+}
+
+
+.vh {
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  .size(1px, 1px);
+
+  &.focusable:active,
+  &.focusable:focus {
+    clip: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    .size(auto, auto);
+  }
+}
+
+
+// Logging
+.log {
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 25px;
+}
+
+
+

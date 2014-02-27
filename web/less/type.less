@@ -1,0 +1,110 @@
+// Typography.less
+// Headings, body text, lists, code, and more for a versatile and durable typography system
+// ----------------------------------------------------------------------------------------
+
+@font-face {
+    font-family: 'AtlasGroteskRegular';
+    src: url('../fonts/atlasgrotesk-regular.eot');
+    src: url('../fonts/atlasgrotesk-regular.eot') format('embedded-opentype'),
+         url('../fonts/atlasgrotesk-regular.woff') format('woff'),
+         url('../fonts/atlasgrotesk-regular.ttf') format('truetype'),
+         url('../fonts/atlasgrotesk-regular.svg#AtlasGroteskRegular') format('svg');
+}
+
+
+// BODY TEXT
+// ---------
+
+p {
+  margin: 0;
+}
+
+
+// HEADINGS
+// --------
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding:0;
+  font-weight: normal;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+h1, h2 {
+  font-size: 26/12em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+// LISTS
+// -----
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: none;
+}
+ol {
+  list-style: none;
+}
+li {
+}
+
+// Description Lists
+dl {
+  margin-bottom: 0;
+}
+dt,
+dd {
+}
+dt {
+}
+dd {
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: 0;
+  border: 0;
+  border: 0;
+}
+
+// Emphasis
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+
+
+// Abbreviations and acronyms
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
+}
+
+// Misc
+small {
+  font-size: 100%;
+}
+cite {
+  font-style: normal;
+}

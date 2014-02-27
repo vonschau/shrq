@@ -1,0 +1,181 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+
+framework:
+    #esi:             ~
+    translator:      { fallback: en }
+    secret:          %secret%
+    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    form:            true
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    default_locale:  %locale%
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:         ~
+    fragments:       ~
+    http_method_override: true
+
+# Twig Configuration
+twig:
+    debug:            %kernel.debug%
+    strict_variables: %kernel.debug%
+
+# Assetic Configuration
+assetic:
+    debug:          %kernel.debug%
+    use_controller: false
+    #bundles:        [CmfSimpleCmsBundle, CmfCreateBundle]
+    #java: /usr/bin/java
+    filters:
+        cssrewrite: ~
+        #lessphp:
+            #file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
+            #apply_to: "\.less$"
+        #closure:
+        #    jar: %kernel.root_dir%/Resources/java/compiler.jar
+        #yui_css:
+        #    jar: %kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar
+
+# for jackalope-doctrine-dbal
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
+        charset:  UTF8
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: true
+
+swiftmailer:
+    transport: "%mailer_transport%"
+    host:      "%mailer_host%"
+    username:  "%mailer_user%"
+    password:  "%mailer_password%"
+    spool:     { type: memory }
+
+# cmf configuration
+doctrine_phpcr:
+    # configure the PHPCR session
+    session:
+        backend: %phpcr_backend%
+        workspace: %phpcr_workspace%
+        username: %phpcr_user%
+        password: %phpcr_pass%
+    # enable the ODM layer
+    odm:
+        auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
+        locales:
+            en: ~
+
+liip_doctrine_cache:
+    namespaces:
+        meta:
+            type: file_system
+        nodes:
+            type: file_system
+
+cmf_core:
+    persistence:
+        phpcr:
+            enabled: true
+            basepath: /cms
+    publish_workflow:
+        enabled: false
+    multilang:
+        locales: %locales%
+
+cmf_create:
+    editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
+
+cmf_simple_cms:
+    routing:
+        templates_by_class:
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: CmfSimpleCmsBundle:Page:index.html.twig
+        controllers_by_class:
+            Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute: cmf_routing.redirect_controller:redirectAction
+
+knp_menu:
+    twig: true
+
+lunetics_locale:
+    strict_mode: true
+    guessing_order:
+        - cookie
+        - router
+        - browser
+    allowed_locales: %locales%
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: SHRQ\SymposiumBundle\Entity\User
+    from_email:
+        address: katerina.safrova@gmail.com
+        sender_name: Katerina Safrova
+    registration:
+        confirmation:
+            enabled: true
+        form:
+            type: SHRQ\SymposiumBundle\Form\RegistrationFormType
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.admin.block.shrq_admin_list:
+            contexts:   [admin]
+        sonata_admin_doctrine_phpcr.tree_block:
+            settings:
+                id: '/cms'
+            contexts:   [admin]
+        sonata.user.block.menu: ~
+        sonata.user.block.account: ~
+
+sonata_user:
+    security_acl: true
+    manager_type: orm
+
+sonata_admin:
+    title:      SHRQ Admin
+    templates:
+        # default global templates
+        layout:  SHRQSymposiumBundle::admin_layout.html.twig
+        ajax:    SonataAdminBundle::ajax_layout.html.twig
+        edit:    SHRQSymposiumBundle:CRUD:edit.html.twig
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: left, type: sonata.admin.block.shrq_admin_list }
+            - { position: right, type: sonata_admin_doctrine_phpcr.tree_block }
+        groups:
+            Conference: ~
+
+sonata_doctrine_phpcr_admin:
+    document_tree:
+        Doctrine\ODM\PHPCR\Document\Generic:
+            valid_children:
+                - all
+        # if you are using the SimpleCmsBundle, enable the Page as well
+        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+            valid_children:
+                - all
+        Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent:
+            valid_children:
+                - all
+        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
+            valid_children:
+                - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
+                - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute
+        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:
+            valid_children: []
+        Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode

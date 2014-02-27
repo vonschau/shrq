@@ -1,0 +1,6 @@
+services:
+    sonata.admin.block.shrq_admin_list:
+        class: SHRQ\SymposiumBundle\Block\AdminListBlockService
+        arguments: [ "sonata.admin.block.shrq_admin_list", @templating, @sonata.admin.pool ]
+        tags:
+            - { name: sonata.block }

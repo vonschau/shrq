@@ -1,0 +1,36 @@
+static:
+    home:
+        name: ""
+        title:
+            en: "Welcome to the CMF Standard Edition"
+        body:
+            en: "This is should get you started with the Symfony CMF."
+
+    about:
+        name: "about"
+        label: "About us"
+        title: "Some information about us"
+        body: "The about us page with some content"
+
+    contact:
+        name: "contact"
+        label: "Contact"
+        title: "A contact page"
+        body: "Please send an email to symfony-cmf-devs@groups.google.com"
+
+    map:
+        name: "map"
+        label:
+            en: "Map"
+        parent: "/contact"
+        title:
+            en: "A map of a location in the US"
+        body:
+            en: "Have a look at the map to find us."
+
+    team:
+        name: "team"
+        label: "Team"
+        parent: "/contact"
+        title: "A team page"
+        body: "Our team consists of C, M and F."
