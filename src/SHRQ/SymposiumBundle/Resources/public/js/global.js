@@ -92,7 +92,8 @@ $(function () {
 					$form.replaceWith($data);
 					$data.on('submit', handleRegister);
 				} else {
-					$form.after($data.show());
+					$form.after($data);
+					$data.show();
 					$data.children('ul').show();
 				}
 			}
