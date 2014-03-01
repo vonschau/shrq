@@ -2,13 +2,13 @@
 
 namespace SHRQ\SymposiumBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="fos_user")
  * @ORM\Entity
  */
 class User extends BaseUser
@@ -71,9 +71,18 @@ class User extends BaseUser
      */
     private $paid;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="payment_id", type="string", length=30, nullable=true)
+     */
+    private $paymentId;
+
     public function __construct()
     {
         parent::__construct();
+
+        $this->paid = false;
     }
 
     /**
@@ -245,5 +254,48 @@ class User extends BaseUser
     public function getPaid()
     {
         return $this->paid;
+    }
+
+    /**
+     * Set paymentId
+     *
+     * @param boolean $paid
+     * @return User
+     */
+    public function setPaymentId($paymentId)
+    {
+        $this->paymentId = $paymentId;
+
+        return $this;
+    }
+
+    /**
+     * Get paymentId
+     *
+     * @return boolean
+     */
+    public function getPaymentId()
+    {
+        return $this->paymentId;
+    }
+
+    /**
+     * Get expiresAt
+     *
+     * @return boolean
+     */
+    public function getExpiresAt()
+    {
+        return $this->expiresAt;
+    }
+
+    /**
+     * Get credentialsExpireAt
+     *
+     * @return boolean
+     */
+    public function getCredentialsExpireAt()
+    {
+        return $this->credentialsExpireAt;
     }
 }

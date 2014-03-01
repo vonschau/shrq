@@ -1,0 +1,46 @@
+{% form_theme form 'SHRQSymposiumBundle:Form:fields.html.twig' %}
+
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="registration-form fos_user_registration_register{% if app.request.isMethod('POST') %} opened{% endif %}">
+	<ul class="row-1">
+		<li><h2>Registration form</h2></li>
+		<li>
+		{{ form_errors(form) }}
+			<span class="heading">Your basic information</span>
+			{{ form_errors(form.first_name) }}
+			{{ form_widget(form.first_name, {'attr': {'class': 'half', 'placeholder': 'First name'}}) }}
+			{{ form_errors(form.last_name) }}
+			{{ form_widget(form.last_name, {'attr': {'class': 'half', 'placeholder': 'Last name'}}) }}
+			{{ form_errors(form.address) }}
+			{{ form_widget(form.address, {'attr': {'class': 'half', 'placeholder': 'Address', 'rows': '3', 'cols': '35'}}) }}
+		</li>
+		<li>
+			<span class="heading">Phone with international predial</span>
+			{{ form_errors(form.phone) }}
+			{{ form_widget(form.phone, {'attr': {'placeholder': '+420 123 456 789'}}) }}
+		</li>
+		<li>
+			<span class="heading">Your account credentials</span>
+			{{ form_errors(form.email) }}
+			{{ form_widget(form.email, {'attr': {'placeholder': 'Email adress'}}) }}
+			{{ form_errors(form.plainPassword) }}
+			{{ form_widget(form.plainPassword.first, {'attr': {'placeholder': 'Password', 'style': 'width:100%'}}) }}
+			{{ form_widget(form.plainPassword.second, {'attr': {'placeholder': 'Confirm Password', 'style': 'width:100%'}}) }}
+		</li>
+		<li>
+			<span class="heading">Your payment information</span>
+			<p class="radios">
+				{{ form_errors(form.payment_type) }}
+				{{ form_widget(form.payment_type) }}
+			</p>
+		</li>
+	</ul>
+	<ul class="row-2">
+		<li><h2>Registering for</h2></li>
+		{{ form_errors(form.ticket_type) }}
+		{{ form_widget(form.ticket_type) }}
+		<li>
+			{{ form_rest(form) }}
+			<button type="submit">Submit</button>
+		</li>
+	</ul>
+</form>

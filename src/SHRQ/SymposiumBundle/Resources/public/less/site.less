@@ -37,11 +37,11 @@ img {
   width: 100/2%;
 }
 
-input[type='text'], button {
+input[type='text'], input[type='password'], button {
   display: block;
   border: 1px solid #000;
 }
-input[type='text'] {
+input[type='text'], input[type='password'] {
   #font > #family > .sans-serif();
 }
 
@@ -49,11 +49,34 @@ button {
   font-family: 'Verdana', sans-serif;
 }
 
+#menu nav .registration-form textarea {
+  width: 100%;
+  height: 54px;
+  margin-bottom: -1px;
+  padding: 1px 3px 0;
+}
+textarea {
+  #font > #family > .sans-serif();
+  display: block;
+  border: 1px solid #000;
+}
+
+.fos_user_registration_register .row-2 label {
+  display: block;
+}
+#menu nav .summary, #logged nav .summary {
+  width: 300%;
+}
+
 // LINKS
 // ---------
 a {
   color:@black;
   text-decoration:none;
+}
+
+.errors {
+  background-color: red;
 }
 
 .page {
@@ -106,12 +129,12 @@ a {
           margin-left: 0;
         }
       }
-      input[type='text'], button, a {
+      input[type='text'], input[type='password'],  button, a {
         width: 100%;
         display: block;
         border: 1px solid #000;
       }
-      input[type='text'] {
+      input[type='text'], input[type='password'] {
         height: 25px;
         padding: 1px 3px 0;
         margin-bottom: -1px;
@@ -136,6 +159,15 @@ a {
   }
 }
 
+h1 {
+  position: relative;
+  span {
+    position: absolute;
+    top: 0;
+    left: 40%;
+  }
+}
+
 #menu, #logged {
   padding: 0 2em;
   background: @pink;
@@ -150,6 +182,9 @@ a {
       display: block;
       padding: 0.5em;
       border: 1px solid @pink;
+      &.link {
+        padding: 0.5em 0;
+      }
       &.opened {
         color: @blue;
         border: 1px solid #000;
@@ -158,6 +193,7 @@ a {
     p {
       padding: 0.5em;
       font-size: 12/14em;
+      margin-bottom: 0;
     }
     ul {
       position: absolute;
@@ -195,6 +231,20 @@ a {
       border-left: 1px solid #000;
       min-height: @navheight;
       margin-left: -1px;
+      &.right {
+        left: 460%;
+      }
+      &.venues {
+        padding-right: 0;
+        width: 360%;
+      }
+      &.contact-wrap {
+        padding-right: 0;
+      }
+      img {
+        float: left;
+        margin: 0 1em 1em 0.5em;
+      }
     }
     .person-lessons {
       position: absolute;
@@ -230,7 +280,8 @@ a {
         font-size: 14px;
         padding: 0 0.4em;
         border-bottom: 1px solid #000000;
-        min-height: 4em
+        min-height: 56px;
+        margin-bottom: -1px;
       }
       .radios {
         padding: 0 0.5em;
@@ -243,7 +294,14 @@ a {
       }
       .row-1 {
         h2 {
-          margin-bottom: -2.3em;
+          // margin-bottom: -33px;
+        }
+        li {
+          position: relative;
+        }
+        .absolute {
+          position: absolute;
+          top: -32px;
         }
       }
       .row-2 {
@@ -265,8 +323,8 @@ a {
           }
         }
         h2 {
-          min-height: 3.9em;
-          margin: 0;
+          // min-height: 54px;
+          // margin: 0;
         }
         p {
           margin:0;
@@ -336,7 +394,7 @@ a {
         font-size: 14px;
         padding: 0 0.4em;
         border-bottom: 1px solid #000000;
-        min-height: 3.9em
+        min-height: 56px;
       }
       .label, .value {
         display: block;
@@ -459,6 +517,18 @@ a {
     padding: 0.5em;
     vertical-align: top;
   }
+  .bordered {
+    border-bottom: 1px solid #000 !important;
+  }
+  .unbordered {
+    border-bottom: 1px solid #DEDFE0 !important;
+  }
+  .opener {
+    td {
+      border: 1px solid #DEDFE0 !important;
+      padding: 0;
+    }
+  }
   tr {
     &.date {
       font-size: 12/14em;
@@ -477,23 +547,52 @@ a {
   td {
     border: 1px solid #000;
     width: 1/8*100%;
+    &.opened-td {
+      background: @pink;
+      a {
+        color: @blue;
+      }
+    }
     &.no-right {
-      border-right: 1px solid #DEDFE0;
+      border-right: 1px solid #DEDFE0 !important;
+    }
+    > a {
+      display: block;
+      position: relative;
+      min-height: 11em;
+      span {
+        color: @blue;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
     }
   }
   td[colspan='2'] {
     width: 2/8*100%;
   }
+}
+
+.register {
+  background: @blue;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  padding: 2em;
+}
+
+#menu .contacts {
+  width: 100%;
+  li {
+    float: left;
+    width: 100/3%;
+    padding: 0.5em;
+    font-size: 12/14em;
+  }
   a {
-    display: block;
-    position: relative;
-    min-height: 11em;
-    span {
-      color: @blue;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
+    padding: 0;
+    display: inline;
+    border: 0;
   }
 }

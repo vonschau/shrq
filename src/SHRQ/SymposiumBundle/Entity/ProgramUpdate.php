@@ -7,8 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ProgramUpdate
  *
- * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Table(name="program_update")
+ * @ORM\Entity()
  */
 class ProgramUpdate
 {

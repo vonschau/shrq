@@ -1,271 +1,500 @@
 {% extends "SHRQSymposiumBundle::layout.html.twig" %}
 
 {% block content %}
+{% if is_granted('ROLE_USER') %}
+	<section id="logged">
+		<nav>
+			<ul class="c grid-1">
+				<li>
+					<a href="#">General Info</a>
+					<div class="person-detail">
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat.</p>
+						<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis.</p>
+						<ul class="person-lessons">
+							<li>
+								<a href="#">Lorem ipsum dolor sit amet</a>
+								<div class="lesson-details">
+									<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis. </p>
+								</div>
+							</li>
+							<li>
+								<a href="#">Interdum et malesuada fames</a>
+								<div class="lesson-details">
+									<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis. </p>
+								</div>
+							</li>
+							<li>
+								<a href="#">Etiam rutrum</a>
+								<div class="lesson-details">
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat. </p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<a href="#">Program update</a>
+					<ul class="sub-1">
+						<li><a href="#">1st update</a></li>
+						<li>
+							<a href="#">Events on monday and tuesday</a>
+							<div class="person-detail">
+								<p>
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat.</p>
+								<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis.</p>
+							</div>
+						</li>
+						<li><a href="#">3 event</a></li>
+						<li><a href="#">meeting tomorrow</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Documents</a>
+					<div class="documents">
+						<ul class="row-1">
+							<li><a href="#" class="link pdf">
+								Guedra<br>
+								trance ritual of the<br>
+								Blue People/<br>
+								Kel Tagelmousse<br>
+								of the Sahara<br>
+							</a></li>
+							<li><a href="#" class="link">
+								Martin Stokes<br>
+							</a></li>
+							<li><a href="#" class="link mp3">
+								MP3<br>
+								Guedra<br>
+								trance ritual of the<br>
+								Blue People/<br>
+								Kel Tagelmousse<br>
+							</a></li>
+							<li><a href="#" class="link pdf">
+								JtE 1 and JtE 2<br>
+								lineup
+							</a></li>
+							<li><a href="#" class="link pdf">
+								Guedra<br>
+								trance ritual of the<br>
+								Blue People/<br>
+								Kel Tagelmousse<br>
+								of the Sahara
+							</a></li>
+						</ul>
+						<ul class="row-2">
+							<li><a href="#" class="link pdf">
+								Terms of service
+							</a></li>
+							<li><a href="#" class="link pdf">
+								Nationalities and<br>
+								ethnic group in<br>
+								Egypt
+							</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="logout">
+					<a href="#">Logout</a>
+				</li>
+			</ul>
+		</nav>
+
+	</section>
+{% endif %}
 
 <section id="menu">
 	<nav>
 		<ul class="c grid-1">
-			<li><a href="#">News</a></li>
-			<li><a href="#">Introduction</a></li>
+			<li><a href="#news">News</a>
+				<div class="person-detail">
+					<p>
+						<b>REGISTRATIONS OPEN!</b>
+					</p>
+					<p>
+						The registrations for Journey through Egypt courses and the Symposium program are now open. Space limited to 180 participants. Don’t miss the opportunity to be a part of the first theoretical event for oriental dancers and Middle Eastern culture enthusiasts!
+					</p>
+				</div>
+			</li>
+			<li><a href="#introduction">Introduction</a>
+				<div class="person-detail">
+					<p>
+						SHRQ Symposium on Middle Eastern Culture is a new comprehensive educational event for oriental dancers and Middle Eastern culture enthusiasts offering a better theoretical understanding of the facts and historical and social contexts of Middle Eastern dance and music on an academic level. The program will start with an intensive workshop Journey through Egypt 1 &amp; 2 with experienced dancer and dance ethnologist Sahra Saeeda and will be followed by three days of lectures by ethnologists, anthropologists and ethnomusicologists such as Farida Fahmy, Sahra Saeeda, Morocco, prof. Martin Stokes, prof. Karin van Nieuwkerk and others. The evening program consists of a concert of classical egyptian music, an education dance show, a charity fusion dance party and more lectures by our inspiring and experienced guests. The objective of SHRQ Symposium is to create a new ground for people with a deep interest in Middle Eastern culture and to create a dialogue between the academic community and the community of oriental dancers and musicians.
+
+					</p>
+				</div>
+			</li>
 			<li>
-				<a href="#">Lectures</a>
+				<a href="#lectures">Lectures</a>
 				<ul class="sub-1">
-					<li><a href="#">Farida Fahmy</a></li>
-					<li><a href="#">Karin van Nieuwkerk</a></li>
-					<li><a href="#">Sahra Saeeda</a></li>
-					<li><a href="#">Martin Stokes</a></li>
-					<li><a href="#">Morocco</a>
+					<li><a href="#">Farida Fahmy</a>
 						<div class="person-detail">
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat.</p>
-							<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis.</p>
+							<img src="{{ asset('bundles/shrqsymposium/img/farida.jpg') }}" alt="">
+							<p>Egyptian dance and cinema icon Farida Fahmy was co-founder and principle dancer of the Original Reda Troupe for 25 years. Elevating Egyptian theatre dance to the high arts, her unique style, grace and elegance inspired generations of dancers and won her the admiration of her audiences in Egypt and abroad. Her dedication, hard work, discipline and commitment to the troupe made her a role model that was emulated by generations of dancers. Together with her brother-in-law Mahmoud Reda and the Reda troupe, she traveled extensively, performing in over 60 countries and participated in international dance festivals where the troupe has won various prizes and awards. She has danced for heads of states in numerous cultural and honorary performances in Egypt and abroad. In 1967 Farida was decorated by President Gamal Abdel Nasser with the Order of Arts and Sciences for services rendered to the state, in 1956 by King Hussein of Jordan with the Star of Jordan, and in 1973 by President Bourguiba of Tunisia. She starred in a number of Egyptian films, as well as in two major musicals directed by her late husband Ali Reda, starring Mahmoud Reda and The Reda Troupe.</p>
+							<p>Farida continued to pursue her education while she performed in The Reda Troupe. She received her Bachelor of Arts in English Literature from Cairo University in 1967, and her Master of Arts degree in Dance Ethnology from The University of California at Los Angeles (UCLA).</p>
+ 
 							<ul class="person-lessons">
 								<li>
-									<a href="#">Guedra trance ritual of the Blue People / Kel Tagelmousse of the Sahara</a></li>
-								<li>
-									<a href="#">In Loving Remembrance: the Best School That Ever Was</a>
-									<div class="lesson-details">
-										<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis. </p>
+									<a href="#">Dance in Egypt - From field to the stage</a>
+									<div class="lesson-details" id="farida-1">
+										<p>Lecture will discuss in full the field researches that Mahmoud Reda under went. The lecture would explain in some detail the methods used and how it was presented on stage.  The main  characteristic that will be discussed in full will be improvisation and how it is shared by other art forms, its pros and cons.</p>
 									</div>
 								</li>
 								<li>
-									<a href="#">Styles of oriental dance / Raqs Sharqi / Oryantal Tansi</a>
-									<div class="lesson-details">
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat. </p>
+									<a href="#">My journey with the Reda troupe</a>
+									<div class="lesson-details" id="farida-2">
+										<p>An introduction to Ms.Farida's dance life, aspirations, and how the Reda Troupe was founded with reference to the founder and his co-founders. The lecture will deal with the historical  and social aspects, especially the drastic change that the establishment of Reda Troupe meant for the perception of egyptian dance.</p>
+									</div>
+								</li>
+								<li>
+									<a href="#">The birth of a new dance form in Egypt</a>
+									<div class="lesson-details" id="farida-3">
+										<p>The lecture will deal with the artistic aspect of egyptian dance and the birth of a new dance form that embraced many styles. It will also involve informations on the many stages of its presentations.</p>
 									</div>
 								</li>
 							</ul>
 						</div>
 					</li>
-					<li><a href="#">Khaled Noori</a></li>
-					<li><a href="#">Yara Salahiddeen</a></li>
-					<li><a href="#">Leila Molaei</a></li>
-					<li><a href="#">František Ondráš</a></li>
-					<li><a href="#">Barbora Černá</a></li>
-					<li><a href="#">Zuzana Nízka</a></li>
-					<li><a href="#">Lucie Bielická</a></li>
-					<li><a href="#">Tarik Beshir</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Links</a></li>
-			<li>
-				<a href="#">Regitration</a>
-				<form class="registration-form">
-					<ul class="row-1">
-						<li><h2>Registration form</h2></li>
-						<li>
-							<span class="heading">Your basic information</span>
-							<input type="text" placeholder="First name" class="half">
-							<input type="text" placeholder="Last name" class="half">
-							<textarea placeholder="Adress" cols="35" rows="3"></textarea>
-						</li>
-						<li>
-							<span class="heading">Phone with international predial</span>
-							<input type="text" value="+420">
-						</li>
-						<li>
-							<span class="heading">Your account credentials</span>
-							<input type="text" placeholder="Email adress">
-							<input type="text" placeholder="Password">
-							<input type="text" placeholder="Confirm Password">
-						</li>
-						<li>
-							<span class="heading">Your payment information</span>
-							<p class="radios">
-								<input type="radio" name="payment">
-								<label><img src="/img/ico-paypal.png" alt=""></label>
-								<input type="radio" name="payment">
-								<label><img src="/img/ico-card.png" alt=""></label>
-							</p>
-						</li>
-					</ul>
-				 	<ul class="row-2">
-				 		<li><h2>Registering for</h2></li>
-				 		<li>
-				 			<p class="radios">
-					 			<label for="variant1">Symposium <br>program <br>(lectures, concert, <br>show) <span>€ 200</span></label>
 
-					 			<input type="radio" name="variant" id="variant1">
-				 			</p>
-				 		</li>
-				 		<li>
-				 			<p class="radios">
-					 			<label for="variant2">JtE1 with Sahra <br>Saeeda <span>€ 250</span></label>
-
-					 			<input type="radio" name="variant" id="variant2">
-				 			</p>
-				 		</li>
-				 		<li>
-				 			<p class="radios">
-					 			<label for="variant1">Symposium <br>program <br> with JtE1 <span>€ 450</span></label>
-
-					 			<input type="radio" name="variant" id="variant1">
-				 			</p>
-				 		</li>
-				 		<li>
-				 			<p class="radios">
-					 			<label for="variant3">JtE 1 and JtE 2 with <br>Sahra Saeeda <span>€ 450</span></label>
-
-					 			<input type="radio" name="variant" id="variant3">
-					 		</p>
-				 		</li>
-				 		<li>
-				 			<p class="radios">
-					 			<label for="variant4">600 Eur - Whole <br>week program <span>€ 600</span></label>
-
-					 			<input type="radio" name="variant" id="variant4">
-					 		</p>
-				 		</li>
-				 		<li>
-				 			<button type="submit">Submit</button>
-				 		</li>
-				 	</ul>
-				</form>
-				<div class="summary">
-					<ul>
-						<li><h2>Summary</h2></li>
-						<li class="c">
-							<span class="label">Name</span>
-							<span class="value">Lorem Ipsum</span>
-						</li>
-						<li class="c">
-							<span class="label">Adress</span>
-							<span class="value">
-								Lorem 77<br>
-								Ipsum 5, 123 45
-							</span>
-						</li>
-						<li class="c">
-							<span class="label">Phone Number</span>
-							<span class="value">
-								+420 123 456 789
-							</span>
-						</li>
-						<li class="c">
-							<span class="label">Email Adress</span>
-							<span class="value">lorem@ipsum.com</span>
-						</li>
-						<li class="c bordered">
-							<span class="label">Card Information</span>
-							<span class="value">xxxx-xxxx-xxxx-4879</span>
-						</li>
-						<li class="c bordered">
-							<span class="label">Registering for</span>
-							<span class="value">Whole week program</span>
-						</li>
-						<li class="c bordered">
-							<span class="label">Total</span>
-							<span class="value">€ 600</span>
-						</li>
-						<li>
-							<a class="paypal" href="#">Pay</a>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li><a href="#">Contacts</a></li>
-		</ul>
-	</nav>
-</section>
-
-<section id="logged">
-
-	<nav>
-		<ul class="c grid-1">
-			<li>
-				<a href="#">General Info</a>
-				<div class="person-detail">
-					<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat.</p>
-					<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis.</p>
-					<ul class="person-lessons">
-						<li>
-							<a href="#">Guedra trance ritual of the Blue People / Kel Tagelmousse of the Sahara</a></li>
-						<li>
-							<a href="#">In Loving Remembrance: the Best School That Ever Was</a>
-							<div class="lesson-details">
-								<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis. </p>
-							</div>
-						</li>
-						<li>
-							<a href="#">Styles of oriental dance / Raqs Sharqi / Oryantal Tansi</a>
-							<div class="lesson-details">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat. </p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</li>
-			<li>
-				<a href="#">Program update</a>
-				<ul class="sub-1">
-					<li><a href="#">1st update</a></li>
-					<li>
-						<a href="#">Events on monday and tuesday</a>
+					<li><a href="#">Karin van Nieuwkerk</a>
 						<div class="person-detail">
-							<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat.</p>
-							<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis.</p>
+						<img src="{{ asset('bundles/shrqsymposium/img/karin.jpg') }}" alt="">
+							<p>Karin van Nieuwkerk is Lecturer in Anthropology at Nijmegen University, (NL), Department of Languages and Cultures of the Middle East. Her main field of research has been women in the Middle East, particularly Egypt. On this topic she has published several articles and the book "A Trade like Any Other": Female Singers and Dancers in Egypt, Austin: Texas University Press (1995), and Cairo: American University in Cairo Press (1996). She is currently involved in a research project on religion, gender and identity in a multicultural society, focussing on the Dutch female conversion to Islam.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Performing Piety: Egyptian art and the Islamic Revival </a>
+									<div class="lesson-details" id="karin-1">
+										<p>This lecture continues the historical developments in the lives and status of female performers in Egypt, but  now particularly focusses on the influence of the Islamic Revival on the performing arts (1980-2010). Influenced by the “Islamic Awakening,” some artists - including dancers – became very pious, “repented,” and stepped down from the field of  art. There emerged “Islamic” weddings as an alternative to popular weddings in the street with female dancers. Whereas, generally speaking, the climate is not very favorable for performing arts by women, even in this “Islamic alternative,” (folklore) dance is re-introduced. This shows the great importance of dance as an expression of joyfulness in Egypt.</p>
+									</div>
+								</li>
+								<li>
+									<a href="#">The Social History of female dancers in Egypt (18th – 20th century)</a>
+									<div class="lesson-details" id="karin-2">
+										<p>
+											This lecture will provide a historical account of the developments in the social position of female dancers in Egypt from the late 18th century up till the late 1980s. While the early female performers combined singing, dancing and poetry and performed only for women, profound shifts occurred in both the genre of performance, the audience, and the organization of the profession, leaving strong marks on their social status. The history of female dancers clearly reflects broader social changes in
+											Egypt. Based on travel accounts and art magazines regarding the late 18th until the beginning of the 20th century and on oral history and participant observation with regard to the 1940-1990 period, the  tremendous changes in the status and lives of female dancers will be sketched.
+
+										</p>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</li>
-					<li><a href="#">3 event</a></li>
-					<li><a href="#">meeting tomorrow</a>
+					<li><a href="#">Sahra Saeeda</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/sahra.jpg') }}" alt="">
+							<p>As a Dance Ethnologist, Sahra has University degrees in Dance Ethnology (Master of Arts UCLA), Cultural Anthropology and Archeology (Bachelor UCSB), and Dance (Associate of Arts Palomar College).  After living, researching and performing in Cairo for 6 years (1989-1995) she returns to research in Egypt annually.</p>
+							<p>As a performer, Sahra performs Oriental and Egyptian Folkloric worldwide. Los Angeles California based, she moved to Cairo to research in 1989, and within the month received a contract with the Meridian-Heliopolis 5-star hotel. She held a continuous 6-night a week contract there for nearly 6 years.  She holds the record in Cairo Egypt for the longest running contract of a foreign dancer at a 5-Star Hotel with over 1600 shows in Cairo, Egypt alone. As a teacher, Sahra has taught (and performed) Egyptian style Oriental and Folkloric dance on five continents.  She continues teaching a full tour schedule 11 months a year.  Her warm style of teaching encourages students to grow, learn and enjoy.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Nationalities and ethinc groups in Egypt</a>
+									<div class="lesson-details" id="sahra-1">
+										<p>Egyptian identity is closely tied to geography.  Geographically there 4 regions in Egypt, however for the purpose of defining cultural groups, I have found it easier to divide Egypt into 9 regions, which reflect the view of the peoples themselves.  Three of the regions follow geography, with the addition of the Oases in the Western Desert, and the man-made region of the Suez Canal.  Only 3.5% of Egypt is cultivated and permanently settled, most of this is the Nile Valley and Delta.  The Nile Valley is divided into four regions, one being the capital city of Cairo.  Each of these regions represents a different cultural area, each having it’s own dance style.</p>
+									</div>
+								</li>
+								<li>
+									<a href="#">Nubia</a>
+									<div class="lesson-details" id="sahra-2">
+										<p>Previously Nubians lived primarily in what is now Sudan. Because of the building of the Aswan High Dam, they were relocated to north of the dam mainly in Aswan and Kom Ombo, as their villages became submerged under the water of Lake Nasser.  They do not self-define as “Nubians,” which is the name the ancient Pharaonic Egyptians gave them meaning “gold,” they identify as the two socio-linguistic tribes Kinzi and Fadiki.</p>
+									</div>
+								</li>
+								<li>
+									<a href="#">Saidi and the Ghawazee</a>
+									<div class="lesson-details" id="sahra-3">
+										<p>The largest of the inhabited regions, al Sa’id region is located from just south of Cairo to almost the length of Egypt.  Sa'idi are from the original Pharaonic people. They are most well known around the world for their Assaya dance and Tahtib (a type of martial arts contest/fight).  Sa’idi dance is well represented by the Egyptian National Troupes, as well as foreign dancers around the world.  There are several Ghawazee (performing family) groups in Egypt, the main group we will look at is the Banat Mazin, who live and perform for the Sa'idi people in Luxor.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Martin Stokes</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/martin.jpg') }}" alt="">
+							<p>Martin Stokes is King Edward Professor of Music. He studied first music, then social anthropology at Oxford. He taught at The Queen's University of Belfast (1989-1997), The University of Chicago (1997-2007) and Oxford University (2007-2012). He was a Howard Foundation Fellow at the Chicago Humanities Institute in 2002-3. </p>
+							<p>He has been a visiting professor at Bogazici University in Istanbul on two occasions, and currently holds an honorary professorship in the Department of Arts and Cultural Studies at the University of Copenhagen. In 2013 he will be giving the Bloch Lectures at the University of California, Berkeley. Martin has been studying and playing Middle Eastern music since the 1980s. Since 2012, Martin has been based at King's College, London, where he teaches ethnomusicology. </p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Maqamat</a>
+									<div class="lesson-details" id="martin-1">
+										<p>A basic look at the origins of Maqams, history and Maqam families. Some of the subtle differences between the Turkish and Arabic translation of Maqams.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Morocco</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/morocco.jpg') }}" alt="">
+							<p>
+							Morocco (B.A. Carolina Varga Dinicu) is a member of the Congress on Research in Dance (C.O.R.D.), the Society of Dance History Scholars (S.D.H.S.), the International Coucil on Dance – UNESCO (C.I.D.) and the International Council on Health, Physical Education Sport &amp; Dance – UNESCO (ICHPER-SD). One of the first inducted into the AAMED Mideastern Dance Hall of Fame as “World Class”. Morocco was also voted Ethnic Dancer of the Year in ’97, Instructor of the Year in ’98 &amp; given the Lifetime Achievement award in 2002 by Zaghareet Magazine. In 2005 MECDA voted her their Humanitarian Award for her “body of work” over a lifetime in furthering and enriching Near and Mid-Eastern music and dance &amp; in 2006 the Isis Foundation gave her a Lifetime Achievement Award in Ethnic Dance from the Near and Middle East. Since 1964, Morocco has written for several publications in her field and been reprinted in dance, medical and feminist publications internationally. A true pioneer in the field, she taught a 3-credit course in Middle Eastern Dance &amp; Culture at the State University of New York (Purchase, NY) in the mid 1970s. Her recently published reference book, “You Asked Aunt Rocky: Answers &amp; Advice About Raqs Sharqi &amp; Raqs Shaabi” has received numerous 5-star reviews and is fast becoming the go-to book in the field. Morocco has been doing research, teaching and performing for over 50 years.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">In Loving Remembrance: the Best School That Ever Was</a>
+									<div class="lesson-details" id="morocco-1">
+										<p>Personal memories of how Morocco learned "in culture" in the Near &amp; Middle Eastern diaspora communities in the US/ NYC and how the first schools of oriental dance started: In 1960, when I first started performing as an Oriental dancer, there were NO schools. Performers either assimilated the dance "in culture"/ in the family/ from the "realies" or made it up out of whole cloth. I was fortunate to have learned "in culture". This is the story of how that happened, how I first learned the beginning basics and where it led me to travel and research. </p>
+									</div>
+								</li>
+								<li>
+									<a href="#">Styles of oriental dance / Raqs Sharqi / Oryantal Tansi</a>
+									<div class="lesson-details" id="morocco-2">
+										<p>What are the different "styles" of Raqs Sharqi? What makes them different? How can we compare them or know what they are? Which are real &amp; which are Western inventions?</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Khaled Noori</a>
+						<div class="person-detail">
+							<img src="{{ asset('bundles/shrqsymposium/img/khaled.jpg') }}" alt="">
+							<p>Khaled Noori began playing the violin twenty years ago. He obtained his degree from the University of the Musical Arts in Kuwait whereupon he was asked to continue at the University as a lecturer in Arabic Music Theory and Oriental Solfège. He was appointed conductor of the Arabic Orchestra at the University of Musical Arts, a post he has held for seven years.</p>
+							<p>Khaled is an arranger of music and specialises in traditional Arabic and Turkish styles. He also plays the viola amongst other instruments.  He has travelled widely, both performing and conducting in various orchestras in Korea, Uzbekistan, Japan, Jordan, Syria.</p>
+							<p>Khaled is currently completing a Masters degree in Musical Performance and in his free time enjoys film, European classical music and opera.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Khaleegy music</a>
+									<div class="lesson-details" id="khaled-1">
+										<p>A unique flavour of music with a heritage that draws its influences from India, Iraq, Yemen and Egypt.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Farouk el Safi</a>
+
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/farouk.jpg') }}" alt="">
+							<p>
+								"The  Man  who  inspired  Led  Zeppelin" (more  on  Farouk: http://www.zani.co.uk/music/182-farouk-el-safi-the-man-who-inspired-page-and-plant)
+								Farouk El Safi is a master of Arabic drumming (bendir, daf and others). He is best known for his work with Led Zeppelin and many of the greats of modern Arabic music over the last forty years including  Wadi el Safi, Talal Madaah, Farid Al Atrache, Warda, Karem Mahmoud, Shafiq Galal, Fayza Ahmed, Sabah and Mohammed Abel Mottalib.  He has performed live on countless occasions, including command performances for heads of state in Egypt, Tunisia and Belgium. Amongst western audiences, Farouk is best known as the bendir/daf player on No Quarter: Jimmy Page and Robert Plant Unledded album and, live for their legendary MTV Unplugged performance. He is the proud owner of a platinum record, given in recognition of his part in the million-plus seller, by the former Led Zeppelin.Farouk is a classically trained musician, and with a career spanning more than forty years, he still loves to record and perform his music.  Farouk still records, directs/plays many Zaffa and other live roles, from his home in London. 
+							</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Iqat</a>
+									<div class="lesson-details" id="farouk-1">
+										<p>A journey through some of the most widely used beats in middle eastern music, from Yemen to Morocco.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Leila Molaei</a>
+
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/leila.jpg') }}" alt="">
+							<p>International master dance trainer, performance artist and researcher: native of Iraqi, Arabian Gulf and Iranian dances, specialist in Levantine and Egyptian dances. With her Arab/Iranian roots from the Persian Gulf (Al Ahwaz), Leila Molaei has been internationally performing and training students in Arabic dance since 2005. Based in the United Kingdom, she runs Layali Academy, one of the busiest Arabic dance schools in London covering the dances of Iraq, Egypt, the Levant and the Persian Gulf. One of only a few natives of Iraqi, Arabian Gulf and Iranian dances outside the Middle East, and popular amongst the Arab community, Leila has taught and performed for various high profile clients, including the Bellydance Superstars at Raqs Britannia, Sheraton Hotels and the Destinations Show at Earls Court. Her aim is to preserve and promote the authentic roots of Arabic dance, and this feeling is conveyed in her performances and teaching.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Dance and Music of Iraq and Greater Mesopotamia</a>
+									<div class="lesson-details" id="leila-1">
+										<p>The last few years have seen an explosion in the popularity of Iraqi dance, both within the professional Oriental dance community and within social scenes. Despite the growing numbers of Iraqi diaspora, due to few authentic sources, the cultural context of these dances is lacking, especially for foreign performers. Iraqi dance is currently at a critical point. With increased exposure and a great interest for Iraqi dance right now, this art form needs to be harnessed in the right direction so that it's true essence is maintained. This discussion will focus on the dances and music of Iraq and neighbouring areas, the history to present day as well as the challenges, taboos and controversies affecting Iraqi dance.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Alena Šindelářová</a>
+
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/alena.jpg') }}" alt="">
+							<p>Alena Šindelářová obtained a degree of a Master of Arts (M.A.) at the Charles University in Prague and studied English and Arabic at the Charles University in Prague, SOAS and University of London. Currently she is a PhD candidate. She is the Coordinator of European projects in Pilsen and manager of international projects of Gemma Art Group. Her research is focused on new trends in Arab women's writing, world and postcolonial literature.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">History of Egypt in the 19th and 20th century</a>
+									<div class="lesson-details" id="alena-1">
+										<p>A brief overview of the most important moments in the Egyptian history in the past two centuries. The lecture will deal foremost with events that influenced the development of Egyptian cultural and artistic life.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Barbora Černá</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/barbora.jpg') }}" alt="">
+							<p>Barbora Cerna obtained her degree in Arabic philology and Middle Eastern studies at Charles University in Prague. Her MA thesis dealt with the phenomenon of Egyptian TV series. Currently she is pursuing her academic research in the field of modern Egyptian culture as a Ph. D. candidate. She focuses in her work on the portrayal of Egyptian national identity in TV drama and cinematography.  Scholarships and study stays in Cairo offered her an opportunity not only to engage profoundly in her research, but also to develop other academic interests – study of Egyptian Spoken Arabic and Modern Arab Literature and its translation.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Egyptian cinematography</a>
+									<div class="lesson-details" id="barbora-1">
+										<p>The lecture gives an insight into the history of Egyptian cinematography from the introduction of the first sound film till its golden age in the 1950s and 1960s, stressing the indispensable part of Egyptian film – music and dance performances, further exploring the representation of dancers in the films and the role of musicians and dancers as the stars of silver screen in Egypt, the leading Arab film producer.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Zuzana Nízka</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/zuzana.jpg') }}" alt="">
+							<p>Zuzana Nízka is recently a student of Master programme of Arabic studies at the Philosophical Faculty of the Charles University in Prague where she graduated from Arabic and Iranian studies. At the academic field she is interested in the culture and history of Gulf region about which she is writing her master thesis. During her academic studies she took part in numerous educational and cultural programmes in Syria, Egypt or Iran. </p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Introduction into the history and culture of the Persian Gulf</a>
+									<div class="lesson-details" id="zuzana-1">
+										<p>A brief overview of the most important moments in the history of Persian Gulf. The lecture will deal foremost with events that influenced the development of Khaleegy cultural and artistic life.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Lucie Bielická</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/lucie.jpg') }}" alt="">
+							<p>Lucie Bielická graduated from Arabic Studies and History &amp; Culture of Islamic Countries at Charles University in Prague and attended a one term scholarship at Cairo University, Egypt. In her M.A. Thesis she focused on Belly Dance in the Context of the Western and Arab Islamic Societies. Main areas of interest: Social status of belly dancers; Influence of Western culture on perception of belly dance in Arab society; First Western travellers in the Middle East and their view of Arab society and belly dance. She is currently working in the oil &amp; gas industry.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Orientalism</a>
+									<div class="lesson-details" id="lucie-1">
+										<p>The lecture deals with the first references on Middle Eastern dance and music in the works of the first travellers visiting Egypt and the Middle East in the 18th and 19th century. </p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Tarik Beshir</a>
+						<div class="person-detail">
+						<img src="{{ asset('bundles/shrqsymposium/img/tarik.jpg') }}" alt="">
+							<p>Tarik Beshir is a uniquely talented vocalist and student  of the style and techniques of late 19th and early 20th century song in Ottoman Egypt. Gifted with silken tones and a tremendous range, he is one of just a handful who can faithfully recreate the sound of this period of renaissance. He is also a skilled oud player and songwriter who’s been plying his trade now for over 20 years. He plays the oud in the Egyptian style and the Mohammed Qasabji School of oud technique in particular.</p>
+							<ul class="person-lessons">
+								<li>
+									<a href="#">Developement of egyptian classical music in the 20th century</a>
+									<div class="lesson-details" id="tarik-1">
+										<p>A brief look at the evolution of Egyptian music, musicians and musical instruments from the traditional Takht of the 19th and early 20th century to the big orchestral elaborations of the 1950s, 60s and 1970s.</p>
+									</div>
+								</li>
+								<li>
+									<a href="#">Taqsim  and the story behind some instruments used in Middle Eastern music</a>
+									<div class="lesson-details" id="tarik-2">
+										<p>The Art of spontaneous improvisation, synonymous with middle eastern music. A form widely used by instrumentalists to show the strength of their musicianship and the depth of their musical thinking.</p>
+									</div>
+								</li>
+							</ul>
+						</div>
 					</li>
 				</ul>
 			</li>
-			<li>
-				<a href="#">Documents</a>
-				<div class="documents">
-					<ul class="row-1">
-						<li><a href="#" class="link pdf">
-							Guedra<br>
-							trance ritual of the<br>
-							Blue People/<br>
-							Kel Tagelmousse<br>
-							of the Sahara<br>
-						</a></li>
-						<li><a href="#" class="link">
-							Martin Stokes<br>
-						</a></li>
-						<li><a href="#" class="link mp3">
-							MP3<br>
-							Guedra<br>
-							trance ritual of the<br>
-							Blue People/<br>
-							Kel Tagelmousse<br>
-						</a></li>
-						<li><a href="#" class="link pdf">
-							JtE 1 and JtE 2<br>
-							lineup
-						</a></li>
-						<li><a href="#" class="link pdf">
-							Guedra<br>
-							trance ritual of the<br>
-							Blue People/<br>
-							Kel Tagelmousse<br>
-							of the Sahara
-						</a></li>
-					</ul>
-					<ul class="row-2">
-						<li><a href="#" class="link pdf">
-							Terms of service
-						</a></li>
-						<li><a href="#" class="link pdf">
-							Nationalities and<br>
-							ethnic group in<br>
-							Egypt
-						</a></li>
+			<li><a href="#venues">Venues</a>
+				<div class="person-detail venues">
+
+					<p>
+					<b>Journey through Egypt course venue</b>
+					</p>
+					<p>
+					Maitrea - Dům osobního rozvoje<br>
+					Týnská ulička 6/1064, 110 00 Praha 1<br>
+					tel.: +420 221 711 611<br>
+					e-mail: info@maitrea.cz<br>
+					<a href="http://www.maitrea.cz/dum-osobniho-rozvoje" target="_blank" class="link">http://www.maitrea.cz/dum-osobniho-rozvoje</a>
+					</p>
+					<p>
+					<b>Municipal Library of Prague (symposium lectures, concert and dance show venue)</b>
+					</p>
+					<p>
+					Mariánské náměstí 1/98,, Praha 1<br>
+					<a href="http://www.mlp.cz/en/" target="_blank" class="link">http://www.mlp.cz/en/</a>
+					</p>
+					<p>
+					<b>Official symposium hotel (registrations, evening lectures and Orient fusion party)</b>
+					</p>
+					<p>
+					fusion hotel prague<br>
+					Panská 9, 110 00 Prague 1, Czech Republic
+					</p>
+					<p>
+					<a href="http://www.fusionhotels.com/" target="_blank" class="link">http://www.fusionhotels.com/</a>
+					</p>
+
+
+				</div>
+				<div class="person-detail right venues">
+					<p>
+					<b>Restaurants &amp; Bars</b>
+					</p>
+					<p>
+					Maitrea<br>
+					A great vegetarian restaurant with unique decoration in the very centre of Prague.<br>
+
+					<a href="http://restaurace-maitrea.cz/en" target="_blank" class="link">http://restaurace-maitrea.cz/en</a>
+					</p>
+					<p>
+					Lehka Hlava<br>
+					A smaller charming and cozy sister of Maitrea restaurant - reservations recommended.<br>
+
+					<a href="http://lehkahlava.cz/en_novinky.htm" target="_blank" class="link">http://lehkahlava.cz/en_novinky.htm</a>
+					</p>
+					<p>
+					Mistral<br>
+					Affordable prices and good food and wine  - favourite among students from the many nearby universities.<br>
+
+					<a href="http://www.mistralcafe.cz/en" target="_blank" class="link">http://www.mistralcafe.cz/en</a>
+					</p>
+					<p>
+					Grand Café Orient<br>
+					A unique cubist café - an important part of architectural history of Prague as well as the cultural life.<br>
+
+					<a href="http://www.grandcafeorient.cz/index.php?id=historie&amp;lang=en" target="_blank" class="link">http://www.grandcafeorient.cz/index.php?id=historie&amp;lang=en</a>
+					</p>
+					<p>
+					Čili Bar<br>
+					A cozy boudoir like bar - hidden treasure in the centre of Prague.<br>
+
+					</p>
+					<p>
+					Hemingway Bar - fine mixology &amp; luxury spirits<br>
+					Award winning bar where every cocktail is a piece of art.<br>
+					http://www.hemingwaybar.cz/?Loc=abt&amp;Lng=2
+					<a href="http://www.cilibar.cz" target="_blank" class="link">http://www.cilibar.cz</a>
+					</p>
+
+				</div>
+			</li>
+			{% if not is_granted('ROLE_USER') %}
+				<li>
+					<a href="#registration">Registration</a>
+					{% render url('fos_user_registration_register') %}
+
+					{% for flashMessage in app.session.flashbag.get('notice') %}
+						<div class="summary">{{ flashMessage }}</div>
+					{% endfor %}
+				</li>
+			{% endif %}
+			<li><a href="#">Media</a>
+				<div class="person-detail">
+					<ul class="links">
+						<li><a href="#" class="link">Test link 1</a></li>
+						<li><a href="#" class="link">Test link 1</a></li>
+						<li><a href="#" class="link">Test link 1</a></li>
 					</ul>
 				</div>
 			</li>
-			<li class="logout">
-				<a href="#">Logout</a>
+			<li><a href="#">Contacts</a>
+				<div class="person-detail contact-wrap">
+					<ul class="contacts c">
+						<li>
+							MAIN ORGANIZER<br>
+							Katerina Safrova<br>
+							00420 737 631 040<br>
+							<a href="mailto:katerina.safrova@gmail.com">katerina.safrova@gmail.com</a><br>
+							FB Katerina Shereen
+						</li>
+						<li>
+							ASSISTANT<br>
+							Mateja Mikulan<br>
+							0038 640 464 896<br>
+							<a href="mailto:info@nawar.si">info@nawar.si</a><br>
+							FB Mateja Mikulan
+						</li>
+						<li>
+							Barbora Cerna<br>
+							00420 226 222 800<br>
+							<a href="mailto:info@nawar.si">info@nawar.si</a><br>
+							FB Mateja Mikulan
+						</li>
+					</ul>
+				</div>
 			</li>
 		</ul>
 	</nav>
-
 </section>
-
 
 <section id="table">
 
@@ -287,17 +516,20 @@
 			</tr>
 			<tr>
 				<td colspan="2"></td>
-				<td><a href="#">Orientalism Influences of the Middle East on European culture <br>Lucie Bielická<span>Lecture room 1</span></a></td>
-				<td><a href="#">Taqsim <br>Tarik Beshir<span>Lecture room 2</span></a></td>
-				<td><a href="#">Khaleegy music <br>Khaled Noori<span>Lecture room 1</span></a></td>
-				<td><a href="#">My journey with the Reda troupe <br>Farida Fahmy<span>Lecture room 2</span></a></td>
-				<td><a href="#">In Loving Remembrance: the Best School That Ever Was <br>Morocco<span>Lecture room 1</span></a></td>
-				<td><a href="#">Nubia <br>Sahra Saeeda<span>Lecture room 2</span></a></td>
+				<td><a href="#lucie-1">Orientalism Influences of the Middle East on European culture <br>Lucie Bielická<span>Lecture room 1</span></a></td>
+				<td><a href="#tarik-2">Taqsim <br>Tarik Beshir<span>Lecture room 2</span></a></td>
+				<td><a href="#khaled-1">Khaleegy music <br>Khaled Noori<span>Lecture room 1</span></a></td>
+				<td><a href="#farida-2">My journey with the Reda troupe <br>Farida Fahmy<span>Lecture room 2</span></a></td>
+				<td><a href="#morocco-1">In Loving Remembrance: the Best School That Ever Was <br>Morocco<span>Lecture room 1</span></a></td>
+				<td><a href="#sahra-2">Nubia <br>Sahra Saeeda<span>Lecture room 2</span></a></td>
+			</tr>
+			<tr class="opener">
+				<td colspan="8"></td>
 			</tr>
 			<tr class="date pause">
-				<td colspan="2"></td>
-				<td colspan="2">10 15 am</td>
-				<td colspan="2">10 15 am</td>
+				<td colspan="2" class="no-right unbordered"></td>
+				<td colspan="2" class="no-right">10 15 am</td>
+				<td colspan="2" class="no-right">10 15 am</td>
 				<td colspan="2">10 15 am</td>
 			</tr>
 			<tr class="date">
@@ -307,19 +539,22 @@
 				<td colspan="2">10 30 am</td>
 			</tr>
 			<tr>
-				<td colspan="2"></td>
-				<td><a href="#">Nationalities and ethnic group in Egypt <br>Sahra Saeeda<span>Lecture room 1</span></a></td>
-				<td><a href="#">Developement of egyptian classical music, orchestras and instruments in the 20th century <br>Tarik Beshir<span>Lecture room 2</span></a></td>
-				<td><a href="#">Saidi and Ghawazee <br>Sahra Saeeda<span>Lecture room 1</span></a></td>
-				<td><a href="#">Egyptian cinematography <br>Barbora Černá<span>Lecture room 2</span></a></td>
-				<td><a href="#">Dance in Egypt: From field to the stage <br>Farida Fahmy<span>Lecture room 1</span></a></td>
-				<td><a href="#">The Social History of female dancers in Egypt <br>Karin van Nieuwkerk<span>Lecture room 2</span></a></td>
+				<td colspan="2" class="unbordered"></td>
+				<td><a href="#sahra-1">Nationalities and ethnic group in Egypt <br>Sahra Saeeda<span>Lecture room 1</span></a></td>
+				<td><a href="#tarik-1">Developement of egyptian classical music, orchestras and instruments in the 20th century <br>Tarik Beshir<span>Lecture room 2</span></a></td>
+				<td><a href="#sahra-3">Saidi and Ghawazee <br>Sahra Saeeda<span>Lecture room 1</span></a></td>
+				<td><a href="#barbora-1">Egyptian cinematography <br>Barbora Černá<span>Lecture room 2</span></a></td>
+				<td><a href="#farida-1">Dance in Egypt: From field to the stage <br>Farida Fahmy<span>Lecture room 1</span></a></td>
+				<td><a href="#karin-2">The Social History of female dancers in Egypt <br>Karin van Nieuwkerk<span>Lecture room 2</span></a></td>
 			</tr>
-			<tr class="date pause">
-				<td colspan="2"></td>
+			<tr class="opener">
+				<td colspan="8"></td>
+			</tr>
+			<tr class="date ">
+				<td colspan="2" class="no-right"></td>
+				<td colspan="2" class="no-right">12 30 pm</td>
 				<td colspan="2">12 30 pm</td>
-				<td colspan="2">12 30 pm</td>
-				<td colspan="2">12 30 pm</td>
+				<td colspan="2" class="bordered">12 30 pm</td>
 			</tr>
 			<tr class="date">
 				<td colspan="2" class="no-right"></td>
@@ -328,8 +563,9 @@
 				<td colspan="2">12 45 pm</td>
 			</tr>
 			<tr>
-				<td colspan="6"></td>
-				<td colspan="2" rowspan="5"><a href="#">Final test<span>Lecture room 1</span></a></td>
+				<td colspan="2" class="no-right"></td>
+				<td colspan="4" class="unbordered"></td>
+				<td colspan="2" rowspan="5"><a href="#" class="no-detail">Final test<span>Lecture room 1</span></a></td>
 			</tr>
 			<tr class="date">
 				<td colspan="2">1 pm</td>
@@ -337,7 +573,7 @@
 				<td colspan="2"></td>
 			</tr>
 			<tr>
-				<td colspan="2" rowspan="5"><a href="#">Registration<span>fusion hotel</span></a></td>
+				<td colspan="2" rowspan="5"><a href="#" class="no-detail">Registration<span>fusion hotel</span></a></td>
 				<td colspan="4"></td>
 			</tr>
 			<tr class="date">
@@ -345,19 +581,153 @@
 				<td colspan="2">1 30 pm</td>
 			</tr>
 			<tr>
-				<td rowspan="3"><a href="#">Saidi and Ghawazee <br>Sahra Saeeda<span>Lecture room 1</span></a></td>
-				<td rowspan="3"><a href="#">Egyptian cinematography <br>Barbora Černá<span>Lecture room 2</span></a></td>
-				<td rowspan="3"><a href="#">Dance in Egypt: From field to the stage <br>Farida Fahmy<span>Lecture room 1</span></a></td>
-				<td rowspan="3"><a href="#">The Social History of female dancers in Egypt <br>Karin van Nieuwkerk<span>Lecture room 2</span></a></td>
+				<td rowspan="3"><a href="#zuzana-1">Introduction to the history of the Persian Gulf <br>Zuzana Nízka<span>Lecture room 1</span></a></td>
+				<td rowspan="3"><a href="#farouk-1">Iqat <br>Farouk el Safi<span>Lecture room 2</span></a></td>
+				<td rowspan="3"><a href="#karin-1">Performing Piety: Egyptian art and the Islamic Revival
+					<br>Karin van Nieuwkerk<span>Lecture room 1</span></a></td>
+				<td rowspan="3"><a href="#martin-1">Maqamat <br>Martin Stokes<span>Lecture room 2</span></a></td>
 			</tr>
 			<tr class="date">
 				<td colspan="2">2 00 pm</td>
 			</tr>
 			<tr>
-				<td colspan="2"><a href="#">The Social History of female dancers in Egypt <br>Karin van Nieuwkerk<span>Lecture room 2</span></a></td>
+				<td colspan="2" class="unbordered">Sightseeing tour</td>
+			</tr>
+			<tr class="opener">
+				<td colspan="8"></td>
+			</tr>
+			<tr class="date pause">
+				<td colspan="2" rowspan="3">
+					Registration - continue
+				</td>
+				<td colspan="2">2 45 pm</td>
+				<td colspan="2">2 45 pm</td>
+				<td colspan="2" rowspan="4" class="unbordered">
+
+				</td>
+			</tr>
+			<tr class="date">
+				<td colspan="2">3 00 pm</td>
+				<td colspan="2">3 00 pm</td>
+			</tr>
+			<tr>
+				<td rowspan="2"><a href="#alena-1">History of Egypt in the 19th and 20th century <br>František Ondráš<span>Lecture room 1</span></a></td>
+				<td rowspan="2"><a href="#leila-1">Dance and Music of Iraq and Greater Mesopotamia <br>Leila Molaei<span>Lecture room 2</span></a></td>
+				<td rowspan="2"><a href="#farida-3">The birth of a new dance form in Egypt <br>Farida Fahmy<span>Lecture room 1</span></a></td>
+				<td rowspan="2"><a href="#morocco-2">Styles of oriental dance/Raqs Sharqi/Oryantal <br>Tansi Morocco<span>Lecture room 2</span></a></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="unbordered">
+					&nbsp;
+				</td>
+			</tr>
+			<tr class="opener">
+				<td colspan="8"></td>
+			</tr>
+			<tr class="date">
+				<td colspan="2" rowspan="1"></td>
+				<td colspan="2" rowspan="1">5 00 pm</td>
+				<td colspan="2" rowspan="1">5 00 pm</td>
+				<td colspan="2" class="bordered">
+
+				</td>
+			</tr>
+			<tr class="date pause">
+				<td colspan="2">
+					&nbsp;
+				</td>
+				<td colspan="2">
+					&nbsp;
+				</td>
+				<td colspan="2">
+					&nbsp;
+				</td>
+				<td colspan="2" rowspan="3" class="unbordered">6 00 pm</td>
+			</tr>
+			<tr class="date">
+				<td colspan="2">7 00 pm</td>
+				<td colspan="2">7 00 pm</td>
+				<td colspan="2">7 00 pm</td>
+			</tr>
+			<tr>
+				<td colspan="2"><a href="#" class="no-detail">Oxford Maqam concert<span>Theatre</span></a></td>
+				<td colspan="2"><a href="#" class="no-detail">SHRQ dance show<span>Theatre</span></a></td>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">Orient Fusion party<span></span></a></td>
+			</tr>
+			<tr class="opener">
+				<td colspan="8"></td>
+			</tr>
+			<tr class="date pause">
+				<td colspan="2" rowspan="1">8 30 pm</td>
+				<td colspan="2" rowspan="1">8 30 pm</td>
+				<td colspan="2" class="unbordered">
+					&nbsp;
+				</td>
+				<td colspan="2" rowspan="7">
+					&nbsp;
+				</td>
+			</tr>
+			<tr class="date">
+				<td colspan="2" rowspan="1">9 00 pm</td>
+				<td colspan="2" rowspan="1">9 00 pm</td>
+				<td colspan="2" rowspan="1">9 00 pm</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">
+					A night in Trance Dance as community identity<br><br>
+					Guedra - trance ritual of the Blue People/ Kel Tagelmousse of the Sahara Morocco
+				</a></td>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">
+					Night with egyptian dance legends fusion hotel<br><br>
+					Badia Mansabni and the first generation of egyptian dancers <br>Roberta Piva
+				</a></td>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">
+					Night with inspiring oriental dancers <br>Maria Aya
+				</a></td>
+			</tr>
+			<tr class="date">
+				<td colspan="2" rowspan="1">10 00 pm</td>
+				<td colspan="2" rowspan="1">10 00 pm</td>
+				<td colspan="2" rowspan="1">10 00 pm</td>
+			</tr>
+			<tr>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">
+					Zaar and Zikr - spiritual customs and trance rituals in Egypt <br>Sahra Saeeda
+				</a></td>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">
+					Second generation of egyptian dancers <br>Sahar
+				</a></td>
+				<td colspan="2" class="unbordered"><a href="#" class="no-detail">
+					Lulu Sabongi
+				</a></td>
+			</tr>
+			<tr class="date">
+				<td colspan="2" rowspan="1">11 00 pm</td>
+				<td colspan="2" rowspan="1">11 00 pm</td>
+				<td colspan="2" rowspan="1">11 00 pm</td>
+			</tr>
+			<tr>
+				<td colspan="2"><a href="#" class="no-detail">
+					Zaar ritual with live music<span>Fusion hotel</span>
+				</a></td>
+				<td colspan="2"><a href="#" class="no-detail">
+					Third generation of egyptian dancers <br>to be announced<span>Fusion hotel</span>
+				</a></td>
+				<td colspan="2"><a href="#" class="no-detail">
+					to be announced<span>Fusion hotel</span>
+				</a></td>
+			</tr>
+			<tr class="opener">
+				<td colspan="8"></td>
 			</tr>
 		</tbody>
 	</table>
+
+{% if not is_granted('ROLE_USER') %}
+	<div class="register">
+		Register Now!
+	</div>
+{% endif %}
 
 </section>
 

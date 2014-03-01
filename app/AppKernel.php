@@ -50,6 +50,9 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\UserBundle\SonataUserBundle(),
+
+            new SHRQ\UserBundle\SHRQUserBundle(),
+            new KMJ\PayPalBridgeBundle\KMJPayPalBridgeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

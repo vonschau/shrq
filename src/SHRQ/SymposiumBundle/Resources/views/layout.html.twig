@@ -19,14 +19,16 @@
         {% include "CmfCreateBundle::includecssfiles.html.twig" %}
     {% endblock %}
 
-    <!--[if lte IE 8]><script src="/js/vendor/respond.min.js"></script><![endif]-->
-    <script src="/js/vendor/modernizr.js"></script>
+    <!--[if lte IE 8]><script src="{{ asset('bundles/shrqsymposium/js/vendor/respond.min.js') }}"></script><![endif]-->
+    <script src="{{ asset('bundles/shrqsymposium/js/vendor/modernizr.js') }}"></script>
 </head>
 <body>
     <div class="page">
         <header>
             <h1>Symposium on
-            <br>Middle Eastern Culture</h1>
+                <br>Middle Eastern Culture
+                <span>SHRQ</span>
+            </h1>
 
             <h2>
                 28 11 — 7 12 2014
@@ -56,7 +58,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>window.jQuery || document.write("<script src='{{ asset('bundles/shrqsymposium/js/vendor/jquery-1.10.2.min.js') }}'></script>")</script>
 
+    <script src="{{ asset('bundles/shrqsymposium/js/libs/jquery.scrollTo.min.js') }}"></script>
     <script src="{{ asset('bundles/shrqsymposium/js/global.js') }}"></script>
+    <script src="{{ asset('bundles/shrqsymposium/js/forms.js') }}"></script>
 
     {% render controller("cmf_create.jsloader.controller:includeJSFilesAction", {'_locale': 'en'}) %}
 </body>

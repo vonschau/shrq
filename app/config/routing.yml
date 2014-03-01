@@ -1,12 +1,17 @@
-# Internal routing configuration to handle ESI
-#_internal:
-#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
-#   prefix:   /_internal
+shrq_user:
+    resource: "@SHRQUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
 
 shrq_symposium:
     resource: "@SHRQSymposiumBundle/Controller/DefaultController.php"
     type:     annotation
     prefix:   /
+
+# Internal routing configuration to handle ESI
+#_internal:
+#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   prefix:   /_internal
 
 home_redirect:
     pattern: /

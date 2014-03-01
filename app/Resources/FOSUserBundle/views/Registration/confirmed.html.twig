@@ -1,0 +1,42 @@
+{% block fos_user_content %}
+    <div class="summary">
+		<ul>
+			<li><h2>Summary</h2></li>
+			<li class="c">
+				<span class="label">Name</span>
+				<span class="value">{{ user.firstName }} {{ user.lastName }}</span>
+			</li>
+			<li class="c">
+				<span class="label">Adress</span>
+				<span class="value">
+					{{ user.address }}
+				</span>
+			</li>
+			<li class="c">
+				<span class="label">Phone Number</span>
+				<span class="value">
+					{{ user.phone }}
+				</span>
+			</li>
+			<li class="c">
+				<span class="label">Email Adress</span>
+				<span class="value">{{ user.email }}</span>
+			</li>
+			<li class="c bordered">
+				<span class="label">Payment</span>
+				<span class="value">{{ payment_types[user.paymentType] }}</span>
+			</li>
+			<li class="c bordered">
+				<span class="label">Registering for</span>
+				<span class="value">{{ ticket_types[user.ticketType] }}</span>
+			</li>
+			<li class="c bordered">
+				<span class="label">Total</span>
+				<span class="value">{{ prices[user.ticketType] }} &euro;</span>
+			</li>
+			<li>
+				<a class="paypal" href="{{ payment_url }}">Pay</a>
+			</li>
+		</ul>
+	</div>
+{% endblock fos_user_content %}

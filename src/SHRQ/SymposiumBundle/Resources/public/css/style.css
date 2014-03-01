@@ -257,19 +257,42 @@ img {
   width: 50%;
 }
 input[type='text'],
+input[type='password'],
 button {
   display: block;
   border: 1px solid #000;
 }
-input[type='text'] {
+input[type='text'],
+input[type='password'] {
   font-family: 'AtlasGroteskRegular', sans-serif;
 }
 button {
   font-family: 'Verdana', sans-serif;
 }
+#menu nav .registration-form textarea {
+  width: 100%;
+  height: 54px;
+  margin-bottom: -1px;
+  padding: 1px 3px 0;
+}
+textarea {
+  font-family: 'AtlasGroteskRegular', sans-serif;
+  display: block;
+  border: 1px solid #000;
+}
+.fos_user_registration_register .row-2 label {
+  display: block;
+}
+#menu nav .summary,
+#logged nav .summary {
+  width: 300%;
+}
 a {
   color: #000000;
   text-decoration: none;
+}
+.errors {
+  background-color: red;
 }
 .page {
   width: 100%;
@@ -322,13 +345,15 @@ a {
   margin-left: 0;
 }
 .page > header form input[type='text'],
+.page > header form input[type='password'],
 .page > header form button,
 .page > header form a {
   width: 100%;
   display: block;
   border: 1px solid #000;
 }
-.page > header form input[type='text'] {
+.page > header form input[type='text'],
+.page > header form input[type='password'] {
   height: 25px;
   padding: 1px 3px 0;
   margin-bottom: -1px;
@@ -349,6 +374,14 @@ a {
   background: #007dff;
   color: #ffffff;
 }
+h1 {
+  position: relative;
+}
+h1 span {
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
 #menu,
 #logged {
   padding: 0 2em;
@@ -368,6 +401,10 @@ a {
   padding: 0.5em;
   border: 1px solid #ffebf5;
 }
+#menu nav a.link,
+#logged nav a.link {
+  padding: 0.5em 0;
+}
 #menu nav a.opened,
 #logged nav a.opened {
   color: #007dff;
@@ -377,6 +414,7 @@ a {
 #logged nav p {
   padding: 0.5em;
   font-size: 0.8571428571428571em;
+  margin-bottom: 0;
 }
 #menu nav ul,
 #logged nav ul {
@@ -429,6 +467,24 @@ a {
   min-height: 36em;
   margin-left: -1px;
 }
+#menu nav .person-detail.right,
+#logged nav .person-detail.right {
+  left: 460%;
+}
+#menu nav .person-detail.venues,
+#logged nav .person-detail.venues {
+  padding-right: 0;
+  width: 360%;
+}
+#menu nav .person-detail.contact-wrap,
+#logged nav .person-detail.contact-wrap {
+  padding-right: 0;
+}
+#menu nav .person-detail img,
+#logged nav .person-detail img {
+  float: left;
+  margin: 0 1em 1em 0.5em;
+}
 #menu nav .person-lessons,
 #logged nav .person-lessons {
   position: absolute;
@@ -469,7 +525,8 @@ a {
   font-size: 14px;
   padding: 0 0.4em;
   border-bottom: 1px solid #000000;
-  min-height: 4em;
+  min-height: 56px;
+  margin-bottom: -1px;
 }
 #menu nav .registration-form .radios,
 #logged nav .registration-form .radios {
@@ -482,9 +539,14 @@ a {
   position: relative;
   top: 8px;
 }
-#menu nav .registration-form .row-1 h2,
-#logged nav .registration-form .row-1 h2 {
-  margin-bottom: -2.3em;
+#menu nav .registration-form .row-1 li,
+#logged nav .registration-form .row-1 li {
+  position: relative;
+}
+#menu nav .registration-form .row-1 .absolute,
+#logged nav .registration-form .row-1 .absolute {
+  position: absolute;
+  top: -32px;
 }
 #menu nav .registration-form .row-2,
 #logged nav .registration-form .row-2 {
@@ -508,11 +570,6 @@ a {
   position: absolute;
   top: 0.5em;
   right: 3em;
-}
-#menu nav .registration-form .row-2 h2,
-#logged nav .registration-form .row-2 h2 {
-  min-height: 3.9em;
-  margin: 0;
 }
 #menu nav .registration-form .row-2 p,
 #logged nav .registration-form .row-2 p {
@@ -594,7 +651,7 @@ a {
   font-size: 14px;
   padding: 0 0.4em;
   border-bottom: 1px solid #000000;
-  min-height: 3.9em;
+  min-height: 56px;
 }
 #menu nav .summary .label,
 #logged nav .summary .label,
@@ -709,6 +766,16 @@ a {
   padding: 0.5em;
   vertical-align: top;
 }
+#table .bordered {
+  border-bottom: 1px solid #000 !important;
+}
+#table .unbordered {
+  border-bottom: 1px solid #DEDFE0 !important;
+}
+#table .opener td {
+  border: 1px solid #DEDFE0 !important;
+  padding: 0;
+}
 #table tr.date {
   font-size: 0.8571428571428571em;
   text-align: center;
@@ -724,26 +791,53 @@ a {
   border: 1px solid #000;
   width: 12.5%;
 }
+#table td.opened-td {
+  background: #ffebf5;
+}
+#table td.opened-td a {
+  color: #007dff;
+}
 #table td.no-right {
-  border-right: 1px solid #DEDFE0;
+  border-right: 1px solid #DEDFE0 !important;
 }
-#table td[colspan='2'] {
-  width: 25%;
-}
-#table a {
+#table td > a {
   display: block;
   position: relative;
   min-height: 11em;
 }
-#table a span {
+#table td > a span {
   color: #007dff;
   display: block;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
+#table td[colspan='2'] {
+  width: 25%;
+}
+.register {
+  background: #007dff;
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+  padding: 2em;
+}
+#menu .contacts {
+  width: 100%;
+}
+#menu .contacts li {
+  float: left;
+  width: 33.333333333333336%;
+  padding: 0.5em;
+  font-size: 0.8571428571428571em;
+}
+#menu .contacts a {
+  padding: 0;
+  display: inline;
+  border: 0;
+}
 @media screen and (max-width: 89em) {
-  
+
 }
 .pull-right {
   float: right;

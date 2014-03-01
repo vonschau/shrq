@@ -37,6 +37,7 @@ class UserAdmin extends Admin
         $listMapper
             ->add('first_name')
             ->add('last_name')
+            ->add('email')
             ->add('paid')
             ->add('_action', 'actions', array('actions' => array('show' => array(), 'edit' => array())))
         ;

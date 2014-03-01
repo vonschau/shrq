@@ -1,0 +1,14 @@
+{% block subject %}Welcome to the SHRQ Symposium!{% endblock %}
+{% block body_text %}
+{% autoescape false %}
+Hello {{ user.first_name }},
+
+you've just registered to the SHRQ Symposium on Middle Eastern Culture.
+
+
+
+Regards,
+the Team.
+{% endautoescape %}
+{% endblock %}
+{% block body_html %}{% endblock %}

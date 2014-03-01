@@ -1,0 +1,6 @@
+services:
+    shrq_symposium_registration:
+        class: SHRQ\SymposiumBundle\Form\RegistrationFormType
+        tags:
+            -  { name: form.type }
+        arguments: [%fos_user.model.user.class%]

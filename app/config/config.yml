@@ -121,10 +121,9 @@ fos_user:
         sender_name: Katerina Safrova
     registration:
         confirmation:
-            enabled: true
+            enabled: false
         form:
-            type: SHRQ\SymposiumBundle\Form\RegistrationFormType
-
+            type: shrq_symposium_registration
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -179,3 +178,19 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
+
+kmj_pay_pal_bridge:
+    environment: sandbox
+    sandbox:
+        clientId:  AV5PMBCg1AByhl4g8oG4vpOBiwAyguJnihmPBIggGy2YmOhnWIGJRTSt1a5D
+        secret:    EO0YyBDrmxC-NDICVm0RAwgtLDKeBI7S07MQs5XRZ2VNU9dnKmqZFEV8wiNN
+    production:
+        clientId:  AVnGvRCs4j-glFblnUuda2HGuCLGX8lF4sOyKbp7VcAyxRKWRLWfuVuhjAuu
+        secret:    EJx-PhCG1YMESmdnJ8RatU7X7kH0s1TQPTVHH-7oFX-w2n24k7Tptu_5cbjz
+    logs:
+        enabled: true
+        filename: %kernel.root_dir%/logs/paypal.log
+        level: FINE
+    http:
+        timeout: 30
+        retry: true
