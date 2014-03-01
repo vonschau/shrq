@@ -24,7 +24,7 @@ class RegistrationController extends Controller
     {
         $form = $this->get('fos_user.registration.form');
         $formHandler = $this->get('fos_user.registration.form.handler');
-        $confirmationEnabled = $this->getParameter('fos_user.registration.confirmation.enabled');
+        $confirmationEnabled = $this->container->getParameter('fos_user.registration.confirmation.enabled');
 
         $process = $formHandler->process($confirmationEnabled);
         if ($process) {
@@ -174,7 +174,7 @@ class RegistrationController extends Controller
     {
         try {
             $this->get('fos_user.security.login_manager')->loginUser(
-                $this->getParameter('fos_user.firewall_name'),
+                $this->container->getParameter('fos_user.firewall_name'),
                 $user,
                 $response);
         } catch (AccountStatusException $ex) {
@@ -194,6 +194,6 @@ class RegistrationController extends Controller
 
     protected function getEngine()
     {
-        return $this->getParameter('fos_user.template.engine');
+        return $this->container->getParameter('fos_user.template.engine');
     }
 }
