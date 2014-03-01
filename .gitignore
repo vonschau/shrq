@@ -4,7 +4,7 @@ web/js/
 web/css/
 app/cache/*
 app/logs/*
-vendor/
+/vendor/
 app/app.sqlite
 /bin/
 /app/config/parameters.yml
