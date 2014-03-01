@@ -43,10 +43,8 @@ $(function () {
 
 			$('html, body').animate({scrollTop: that.offset().top}, 0);
 
+			e.preventDefault();
 		}
-
-		e.preventDefault();
-
 	});
 
    	$('.menu-link').on('click', function() {
@@ -71,6 +69,38 @@ $(function () {
 
 		$('html, body').animate({scrollTop: menu.offset().top}, 500);
 	});
+
+
+   	var handleRegister = function(e) {
+		e.preventDefault();
+
+		var $form = $(this);
+
+		var values = {};
+		$.each( $form.serializeArray(), function(i, field) {
+			values[field.name] = field.value;
+		});
+		values['fos_user_registration_form[username]'] = $('#fos_user_registration_form_email').val();
+
+		$.ajax({
+			type        : $form.attr('method'),
+			url         : $form.attr('action'),
+			data        : values,
+			success     : function(data) {
+				var $data = $(data);
+				if ($data.prop('tagName') === 'FORM') {
+					$form.replaceWith($data);
+					$data.on('submit', handleRegister);
+				} else {
+					$form.after($data.show());
+					$data.children('ul').show();
+				}
+			}
+		});
+
+	}
+
+	menu.find('.fos_user_registration_register').on('submit', handleRegister);
 
 
 });
