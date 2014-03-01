@@ -449,7 +449,7 @@
 			</li>
 			{% if not is_granted('ROLE_USER') %}
 				<li>
-					<a href="#registration">Registration</a>
+					<a href="#" id="registration">Registration</a>
 					{% render url('fos_user_registration_register') %}
 
 					{% for flashMessage in app.session.flashbag.get('notice') %}
