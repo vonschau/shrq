@@ -32,6 +32,7 @@ class NewsAdmin extends Admin
         $listMapper
             ->add('title')
             ->add('publishDate')
+            ->add('_action', 'actions', array('actions' => array('edit' => array())))
         ;
     }
 }

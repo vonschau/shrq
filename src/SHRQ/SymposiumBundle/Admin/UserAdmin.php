@@ -42,7 +42,7 @@ class UserAdmin extends Admin
             ->add('email')
             ->add('paid')
             ->add('paymentId')
-            ->add('_action', 'actions', array('actions' => array('show' => array(), 'edit' => array())))
+            ->add('_action', 'actions', array('actions' => array('edit' => array())))
         ;
     }
 }
