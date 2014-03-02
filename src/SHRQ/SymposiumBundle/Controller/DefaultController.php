@@ -27,11 +27,14 @@ class DefaultController extends Controller
             ->getRepository('SHRQSymposiumBundle:News')
             ->findBy(array(), array('publishDate' => 'DESC'));
 
+        $media = $documentManager->find(null, '/cms/simple/Media');
+
         return array(
             'user' => $user,
             'paymentTypes' => $payment_types,
             'ticketTypes' => $ticket_types,
             'news' => $news,
+            'media' => $media,
         );
     }
 
