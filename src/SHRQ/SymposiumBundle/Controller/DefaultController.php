@@ -36,7 +36,7 @@ class DefaultController extends Controller
         $media = $documentManager->find(null, '/cms/simple/Media');
         $introduction = $documentManager->find(null, '/cms/simple/Introduction');
         $contacts = $documentManager->find(null, '/cms/simple/Contacts');
-        $generalInfo = $documentManager->find(null, '/cms/simple/General Info');
+        $generalInfo = $documentManager->find(null, '/cms/simple/General info');
 
         return array(
             'user' => $user,
