@@ -1,6 +1,6 @@
 fos_user:
     username:
-        already_used: The email is already registered
+        already_used: You've already registered. You can sign in above.
         blank: Please enter an email
         short: "[-Inf,Inf]The email is too short"
         long: "[-Inf,Inf]The email is too long"

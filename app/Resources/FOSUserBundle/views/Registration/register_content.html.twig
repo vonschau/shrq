@@ -4,7 +4,7 @@
 	<ul class="row-1">
 		<li><h2>Registration form</h2></li>
 		<li>
-		{{ form_errors(form) }}
+			{{ form_errors(form) }}
 			<span class="heading">Your basic information</span>
 			{{ form_errors(form.first_name) }}
 			{{ form_widget(form.first_name, {'attr': {'class': 'half', 'placeholder': 'First name'}}) }}
@@ -22,7 +22,7 @@
 			<span class="heading">Your account credentials</span>
 			{{ form_errors(form.email) }}
 			{{ form_widget(form.email, {'attr': {'placeholder': 'Email adress'}}) }}
-			{{ form_errors(form.plainPassword) }}
+			{{ form_errors(form.plainPassword) }}{{ form_errors(form.plainPassword.first) }}{{ form_errors(form.plainPassword.second) }}
 			{{ form_widget(form.plainPassword.first, {'attr': {'placeholder': 'Password', 'style': 'width:100%'}}) }}
 			{{ form_widget(form.plainPassword.second, {'attr': {'placeholder': 'Confirm Password', 'style': 'width:100%'}}) }}
 		</li>
