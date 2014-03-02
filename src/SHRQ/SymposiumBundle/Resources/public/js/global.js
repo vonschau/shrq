@@ -1,7 +1,7 @@
 $(function () {
 
 	var menu = $('#menu').detach(),
-		map;
+		map, markers = [];
 
 	$('body').on('click', 'nav li > a', function(e) {
 		if(!$(this).hasClass('link')) {
@@ -153,7 +153,6 @@ $(function () {
 		};
 		map = new google.maps.Map(menu.find('#map').get(0), mapOptions);
 
-		var markers = [];
 		markers.push(new google.maps.Marker({
 			position: new google.maps.LatLng(50.0884285, 14.4225103),
 			map: map,
@@ -168,11 +167,6 @@ $(function () {
 			position: new google.maps.LatLng(50.0840201, 14.4279772),
 			map: map,
 			title:"fusion hotel prague"
-		}));
-		markers.push(new google.maps.Marker({
-			position: new google.maps.LatLng(50.0884285, 14.4225103),
-			map: map,
-			title:"Maitrea"
 		}));
 		markers.push(new google.maps.Marker({
 			position: new google.maps.LatLng(50.08409210000001, 14.4145105),
@@ -199,6 +193,27 @@ $(function () {
 			map: map,
 			title:"Hemingway Bar"
 		}));
+
+		menu.find('p[data-marker]').each(function() {
+			var i = parseInt($(this).data('marker'));
+
+			google.maps.event.addListener(markers[i], 'mouseover', function() {
+				this.setAnimation(google.maps.Animation.BOUNCE);
+				$('p[data-marker=' + i + ']').css('background-color', '#ffdbe5');
+			});
+			google.maps.event.addListener(markers[i], 'mouseout', function() {
+				this.setAnimation(null);
+				$('p[data-marker=' + i + ']').css('background-color', '');
+			});
+
+			$(this).mouseenter(function() {
+				markers[i].setAnimation(google.maps.Animation.BOUNCE);
+				$('p[data-marker=' + i + ']').css('background-color', '#ffdbe5');
+			}).mouseleave(function() {
+				markers[i].setAnimation(null);
+				$('p[data-marker=' + i + ']').css('background-color', '');
+			});
+		});
 	}
 	google.maps.event.addDomListener(window, 'load', initialize);
 });
