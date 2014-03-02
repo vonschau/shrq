@@ -50,7 +50,7 @@ class User extends BaseUser
      * @ORM\Column(name="phone", type="string", length=20)
      * @Assert\Regex(
      *     pattern="/^\+[\d ]{12,18}/",
-     *     message="Phone number must be with international predial (beings with +)"
+     *     message="Phone number must begin with international predial (begins with +)"
      * )
      */
     private $phone;
