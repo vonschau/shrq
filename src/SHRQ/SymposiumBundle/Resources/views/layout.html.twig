@@ -24,6 +24,7 @@
 </head>
 <body>
     <div class="page">
+        {% if not is_granted("IS_AUTHENTICATED_REMEMBERED") %}
         <header>
             <h1>Symposium on
                 <br>Middle Eastern Culture
@@ -40,15 +41,9 @@
                 <li class="symbol-02"><img src="{{ asset('bundles/shrqsymposium/img/symbol-02.png') }}" alt=""></li>
                 <li class="symbol-03"><img src="{{ asset('bundles/shrqsymposium/img/symbol-03.png') }}" alt=""></li>
             </ul>
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
-                {% else %}
-                {% render url('fos_user_security_login') %}
-            {% endif %}
+            {% render url('fos_user_security_login') %}
         </header>
+        {% endif %}
 
         {% block content %}
         {% endblock %}
@@ -56,7 +51,7 @@
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write("<script src='{{ asset('bundles/shrqsymposium/js/vendor/jquery-1.10.2.min.js') }}'></script>")</script>
+    <script>window.jQuery || document.write("<script src='{{ asset('bundles/shrqsymposium/js/vendor/jquery-1.10.2.min.js') }}'><" + "/script>")</script>
 
     <script src="{{ asset('bundles/shrqsymposium/js/global.js') }}"></script>
 

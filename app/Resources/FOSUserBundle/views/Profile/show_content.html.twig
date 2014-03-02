@@ -1,0 +1,20 @@
+<table>
+	<tr><td>Name:</td><td>{{ user.firstName }} {{ user.lastName }}</td></tr>
+	<tr><td valign="top">Address:<td>{{ user.address|nl2br }}</td></tr>
+	<tr><td>Phone:<td>{{ user.phone }}</td></tr>
+	<tr><td>Email:<td>{{ user.email }}</td></tr>
+	<tr><td>Payment:<td>{{ paymentTypes[user.paymentType] }}</td></tr>
+	<tr><td>Ticket:<td>{{ ticketTypes[user.ticketType] }}</td></tr>
+</table>
+<a href="{{ path('fos_user_profile_edit') }}" class="ajax-link" data-target=".profile">Change my details &raquo;</a>
+<br>
+{% if user.paid %}
+	<p><strong>You've succesfully paid your ticket on {{ user.paidDate|date }}.<br>Thank You!</strong></p>
+{% else %}
+	<p>
+		<strong class="errors" style="padding:5px">You haven't paid your ticket.</strong><br><br>
+		Please choose payment method:<br>
+		<a href="{{ path('shrq_user_profile_paypal') }}" class="link" style="display:inline-block"><img src="/bundles/shrqsymposium/img/ico-paypal.png" alt=""></a>
+        <a href="{{ path('shrq_user_profile_card') }}" class="link" style="display:inline-block"><img src="/bundles/shrqsymposium/img/ico-card.png" alt=""></a>
+	</p>
+{% endif %}

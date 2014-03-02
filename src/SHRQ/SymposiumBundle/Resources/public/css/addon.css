@@ -1,0 +1,12 @@
+.profile {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 400%;
+	padding-right: 100%;
+	padding-top: 1.5em;
+	padding-left: 1.5em;
+	border-left: 1px solid #000;
+	min-height: 36em;
+	margin-left: -1px;
+}

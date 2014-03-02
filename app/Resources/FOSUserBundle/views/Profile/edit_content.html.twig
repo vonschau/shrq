@@ -1,0 +1,18 @@
+{% form_theme form 'SHRQSymposiumBundle:Form:fields.html.twig' %}
+
+<form action="{{ path('fos_user_profile_edit') }}" {{ form_enctype(form) }} method="POST" class="fos_user_profile_edit opened">
+    <ul class="row-1">
+		<li>
+		{{ form_errors(form) }}
+			{{ form_row(form.first_name) }}
+			{{ form_row(form.last_name) }}
+			{{ form_row(form.address) }}
+			{{ form_row(form.phone) }}
+			{{ form_row(form.email) }}<br>
+		</li>
+		<li>
+			{{ form_rest(form) }}
+			<button type="submit">Update</button>
+		</li>
+	</ul>
+</form>

@@ -72,6 +72,13 @@ class User extends BaseUser
     private $paid;
 
     /**
+     * @var DateTime
+     *
+     * @ORM\Column(name="paid_date", type="datetime", nullable=true)
+     */
+    private $paidDate;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="payment_id", type="string", length=30, nullable=true)
@@ -242,6 +249,29 @@ class User extends BaseUser
     public function setPaid($paid)
     {
         $this->paid = $paid;
+
+        return $this;
+    }
+
+    /**
+     * Get paidDate
+     *
+     * @return DateTime
+     */
+    public function getPaidDate()
+    {
+        return $this->paidDate;
+    }
+
+    /**
+     * Set paidDate
+     *
+     * @param DateTime $paidDate
+     * @return User
+     */
+    public function setPaidDate($paidDate)
+    {
+        $this->paidDate = $paidDate;
 
         return $this;
     }

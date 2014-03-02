@@ -20,6 +20,7 @@ class UserAdmin extends Admin
             ->add('payment_type', 'choice', array('choices' => array(1 => 'PayPal', 2 => 'VISA')))
             ->add('ticket_type', 'choice', array('choices' => array(1 => 'Symposium program', 2 => 'Symposium program + JtE1', 3 => 'JtE1', 4 => 'JtE1 + JtE2', 5 => 'Whole week program')))
             ->add('paid', 'checkbox', array('required' => false))
+            ->add('paid_date', 'datetime', array('required' => false, 'widget' => 'single_text'))
             ->add('paymentId', 'text', array('required' => false))
         ;
     }

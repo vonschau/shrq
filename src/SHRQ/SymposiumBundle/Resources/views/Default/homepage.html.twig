@@ -6,6 +6,12 @@
 		<nav>
 			<ul class="c grid-1">
 				<li>
+					<a href="#" class="opened">My profile</a>
+					<div class="profile opened">
+						{% render url('fos_user_profile_show') %}
+					</div>
+				</li>
+				<li>
 					<a href="#">General Info</a>
 					<div class="person-detail">
 						<p>
@@ -96,7 +102,7 @@
 					</div>
 				</li>
 				<li class="logout">
-					<a href="#">Logout</a>
+					<a href="{{ path('fos_user_security_logout') }}">Logout</a>
 				</li>
 			</ul>
 		</nav>

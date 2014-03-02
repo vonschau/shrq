@@ -103,5 +103,48 @@ $(function () {
 
 	menu.find('.fos_user_registration_register').on('submit', handleRegister);
 
+	var handleProfile = function(e) {
+		e.preventDefault();
+
+		var $form = $(this);
+
+		var values = {};
+		$.each( $form.serializeArray(), function(i, field) {
+			values[field.name] = field.value;
+		});
+		values['fos_user_profile_form[username]'] = $('#fos_user_profile_form_email').val();
+
+		$.ajax({
+			type        : $form.attr('method'),
+			url         : $form.attr('action'),
+			data        : values,
+			success     : function(data) {
+				var parent = $form.parent();
+				parent.html(data);
+				parent.find('.fos_user_profile_edit').on('submit', handleProfile);
+				parent.find('.ajax-link').on('click', handleAjaxLinks);
+			}
+		});
+
+	}
+
+	menu.find('.fos_user_profile_edit').on('submit', handleProfile);
+
+	var handleAjaxLinks = function(e) {
+		e.preventDefault();
+		var that = $(this);
+
+		$.ajax({
+			url: $(this).attr('href'),
+			type: 'GET',
+			success: function (data) {
+				$(that.data('target')).html(data);
+				$(that.data('target')).find('.ajax-link').on('click', handleAjaxLinks);
+				$(that.data('target')).find('.fos_user_profile_edit').on('submit', handleProfile);
+			}
+		})
+	};
+
+	$('.ajax-link').on('click', handleAjaxLinks);
 
 });

@@ -124,6 +124,9 @@ fos_user:
             enabled: false
         form:
             type: shrq_symposium_registration
+    profile:
+        form:
+            type: shrq_symposium_profile
 sonata_block:
     default_contexts: [cms]
     blocks:

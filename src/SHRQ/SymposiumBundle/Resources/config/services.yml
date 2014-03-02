@@ -4,3 +4,8 @@ services:
         tags:
             -  { name: form.type }
         arguments: [%fos_user.model.user.class%]
+    shrq_symposium_profile:
+        class: SHRQ\SymposiumBundle\Form\ProfileFormType
+        tags:
+            -  { name: form.type }
+        arguments: [%fos_user.model.user.class%]

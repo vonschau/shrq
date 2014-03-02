@@ -19,7 +19,11 @@ class DefaultController extends Controller
      */
     public function homepageAction()
     {
-        return array();
+        $user = $this->container->get('security.context')->getToken()->getUser();
+        $payment_types = array(1 => 'PayPal', 2 => 'Credit Card');
+        $ticket_types = array(1 => 'Symposium program', 2 => 'Symposium program + JtE1', 3 => 'JtE1', 4 => 'JtE1 + JtE2', 5 => 'Whole week program');
+
+        return array('user' => $user, 'paymentTypes' => $payment_types, 'ticketTypes' => $ticket_types);
     }
 
     /**
@@ -45,6 +49,7 @@ class DefaultController extends Controller
 
             $payment->execute($paymentExecution, $paypal->getApiContext());
             $user->setPaid(true);
+            $user->setPaidDate(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
