@@ -1,18 +1,16 @@
 $(function () {
 
-	var menu = $('#menu').detach();
+	var menu = $('#menu').detach(),
+		map;
 
 	$('body').on('click', 'nav li > a', function(e) {
-
-			if(!$(this).hasClass('link')) {
-
-				$(this).parent('li').siblings().find('.opened').removeClass('opened');
-				$(this).addClass('opened').siblings('ul, div, form').addClass('opened');
-
+		if(!$(this).hasClass('link')) {
+			$(this).parent('li').siblings().find('.opened').removeClass('opened');
+			$(this).addClass('opened').siblings('ul, div, form').addClass('opened');
+			google.maps.event.trigger(map, 'resize');
+			map.setCenter(new google.maps.LatLng(50.086094, 14.421270));
 			e.preventDefault();
-
 		}
-
 	});
 
 	$('table a').on('click', function(e) {
@@ -27,9 +25,9 @@ $(function () {
 			var row = $(this).closest('tr').nextAll('.opener').first().find('td');
 
 			menu.appendTo(row);
+			google.maps.event.trigger(map, 'resize');
 
 			var target = $($(this).attr('href'));
-
 
 			$('#menu').find('.opened').removeClass('opened');
 
@@ -53,6 +51,7 @@ $(function () {
 		var row = $('table tr.opener:first').find('td');
 
 		menu.appendTo(row);
+		google.maps.event.trigger(map, 'resize');
 
 		var target = $($(this).attr('href'));
 
@@ -147,4 +146,59 @@ $(function () {
 
 	$('.ajax-link').on('click', handleAjaxLinks);
 
+	function initialize() {
+		var mapOptions = {
+			center: new google.maps.LatLng(50.086094, 14.421270),
+			zoom: 14
+		};
+		map = new google.maps.Map(menu.find('#map').get(0), mapOptions);
+
+		var markers = [];
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.0884285, 14.4225103),
+			map: map,
+			title:"Maitrea - Dům osobního rozvoje"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.0873831, 14.4173879),
+			map: map,
+			title:"Municipal Library of Prague"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.0840201, 14.4279772),
+			map: map,
+			title:"fusion hotel prague"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.0884285, 14.4225103),
+			map: map,
+			title:"Maitrea"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.08409210000001, 14.4145105),
+			map: map,
+			title:"Lehka Hlava"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.0883149, 14.4162797),
+			map: map,
+			title:"Mistral"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.086915, 14.4254801),
+			map: map,
+			title:"Grand Café Orient"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.086094, 14.421270),
+			map: map,
+			title:"Čili Bar"
+		}));
+		markers.push(new google.maps.Marker({
+			position: new google.maps.LatLng(50.0839548, 14.4143128),
+			map: map,
+			title:"Hemingway Bar"
+		}));
+	}
+	google.maps.event.addDomListener(window, 'load', initialize);
 });

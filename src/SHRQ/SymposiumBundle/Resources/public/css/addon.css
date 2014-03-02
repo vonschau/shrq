@@ -10,3 +10,16 @@
 	min-height: 36em;
 	margin-left: -1px;
 }
+.venues {
+	height: 100%;
+	overflow: scroll;
+}
+#menu #map, #menu #map div {
+	display: block;
+}
+#menu #map {
+	height: 100%;
+}
+#menu nav .person-detail.venues {
+	padding: 0;
+}
