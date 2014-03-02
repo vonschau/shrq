@@ -463,7 +463,7 @@
 			{% endif %}
 			<li><a href="#">Media</a>
 				<div class="person-detail">
-					{{ media.body|raw }}
+					{{ media.body|raw|replace({'<a href': '<a class="link" href'}) }}
 				</div>
 			</li>
 			<li><a href="#">Contacts</a>
