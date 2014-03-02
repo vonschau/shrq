@@ -149,7 +149,7 @@ $(function () {
 	function initialize() {
 		var mapOptions = {
 			center: new google.maps.LatLng(50.086094, 14.421270),
-			zoom: 14
+			zoom: 15
 		};
 		map = new google.maps.Map(menu.find('#map').get(0), mapOptions);
 
