@@ -42,18 +42,14 @@
 				<li>
 					<a href="#">Program update</a>
 					<ul class="sub-1">
-						<li><a href="#">1st update</a></li>
-						<li>
-							<a href="#">Events on monday and tuesday</a>
-							<div class="person-detail">
-								<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec felis felis, tincidunt ac sapien ac, viverra luctus odio. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum eu tortor arcu. Aliquam vel massa cursus, tristique dui eu, facilisis ligula. Ut dignissim enim nec convallis aliquam. Sed mollis et arcu non dignissim. Vivamus at pulvinar ligula. Nullam vehicula mi eu fermentum dictum. Suspendisse porttitor enim nec nibh consequat, sit amet fringilla diam fringilla. Sed lorem elit, tristique id faucibus vitae, rhoncus in urna. Pellentesque laoreet, ligula nec pharetra hendrerit, sem diam fringilla nunc, vitae fringilla neque odio ac metus. Nulla quis enim risus. Duis vel euismod erat. Quisque accumsan libero in elit rutrum, a dapibus felis placerat.</p>
-								<p>Etiam rutrum, mauris a suscipit pulvinar, sem sapien laoreet arcu, vel fringilla massa dolor id erat. Aenean sollicitudin vitae velit id bibendum. Nulla vitae cursus nulla. Sed vitae facilisis diam. Curabitur ante felis, fermentum ac euismod ac, vehicula id sapien. Sed eget lorem libero. Sed a urna nisi. Suspendisse eget elit vel risus pharetra bibendum vitae a turpis.</p>
-							</div>
-						</li>
-						<li><a href="#">3 event</a></li>
-						<li><a href="#">meeting tomorrow</a>
-						</li>
+						{% for programUpdate in programUpdates %}
+							<li>
+								<a href="#">{{ programUpdate.title }}</a>
+								<div class="person-detail">
+									{{ programUpdate.content|raw }}
+								</div>
+							</li>
+						{% endfor %}
 					</ul>
 				</li>
 				<li>
