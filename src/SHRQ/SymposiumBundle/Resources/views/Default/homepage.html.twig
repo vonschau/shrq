@@ -115,12 +115,10 @@
 		<ul class="c grid-1">
 			<li><a href="#news">News</a>
 				<div class="person-detail">
-					<p>
-						<b>REGISTRATIONS OPEN!</b>
-					</p>
-					<p>
-						The registrations for Journey through Egypt courses and the Symposium program are now open. Space limited to 180 participants. Don’t miss the opportunity to be a part of the first theoretical event for oriental dancers and Middle Eastern culture enthusiasts!
-					</p>
+					{% for n in news %}
+						<p><b>{{ n.title }}</b></p>
+						{{ n.content|raw }}
+					{% endfor %}
 				</div>
 			</li>
 			<li><a href="#introduction">Introduction</a>

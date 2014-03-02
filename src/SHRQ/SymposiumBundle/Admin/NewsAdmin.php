@@ -13,7 +13,7 @@ class NewsAdmin extends Admin
     {
         $formMapper
             ->add('title')
-            ->add('publish_date', 'date')
+            ->add('publishDate', 'date')
             ->add('content', 'textarea', array('label' => 'Content', 'attr' => array('class' => 'ckeditor', 'rows' => 20, 'cols' => 200, 'style' => 'width: 600px')))
         ;
     }
@@ -31,7 +31,7 @@ class NewsAdmin extends Admin
     {
         $listMapper
             ->add('title')
-            ->add('publish_date')
+            ->add('publishDate')
         ;
     }
 }
