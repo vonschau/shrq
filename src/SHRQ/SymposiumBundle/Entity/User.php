@@ -4,6 +4,7 @@ namespace SHRQ\SymposiumBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -47,6 +48,10 @@ class User extends BaseUser
      * @var string
      *
      * @ORM\Column(name="phone", type="string", length=20)
+     * @Assert\Regex(
+     *     pattern="/^\+[\d ]{12,18}/",
+     *     message="Phone number must be with international predial (beings with +)"
+     * )
      */
     private $phone;
 
