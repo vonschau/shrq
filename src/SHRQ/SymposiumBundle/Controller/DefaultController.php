@@ -27,6 +27,8 @@ class DefaultController extends Controller
             ->getRepository('SHRQSymposiumBundle:News')
             ->findBy(array(), array('publishDate' => 'DESC'));
 
+        $documentManager = $this->container->get('doctrine_phpcr.odm.default_document_manager');
+
         $media = $documentManager->find(null, '/cms/simple/Media');
 
         return array(
