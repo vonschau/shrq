@@ -30,13 +30,17 @@ class DefaultController extends Controller
         $documentManager = $this->container->get('doctrine_phpcr.odm.default_document_manager');
 
         $media = $documentManager->find(null, '/cms/simple/Media');
+        $introduction = $documentManager->find(null, '/cms/simple/Introduction');
+        $contacts = $documentManager->find(null, '/cms/simple/Contacts');
 
         return array(
             'user' => $user,
             'paymentTypes' => $payment_types,
             'ticketTypes' => $ticket_types,
             'news' => $news,
+            'introduction' => $introduction,
             'media' => $media,
+            'contacts' => $contacts,
         );
     }
 

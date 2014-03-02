@@ -123,10 +123,7 @@
 			</li>
 			<li><a href="#introduction">Introduction</a>
 				<div class="person-detail">
-					<p>
-						SHRQ Symposium on Middle Eastern Culture is a new comprehensive educational event for oriental dancers and Middle Eastern culture enthusiasts offering a better theoretical understanding of the facts and historical and social contexts of Middle Eastern dance and music on an academic level. The program will start with an intensive workshop Journey through Egypt 1 &amp; 2 with experienced dancer and dance ethnologist Sahra Saeeda and will be followed by three days of lectures by ethnologists, anthropologists and ethnomusicologists such as Farida Fahmy, Sahra Saeeda, Morocco, prof. Martin Stokes, prof. Karin van Nieuwkerk and others. The evening program consists of a concert of classical egyptian music, an education dance show, a charity fusion dance party and more lectures by our inspiring and experienced guests. The objective of SHRQ Symposium is to create a new ground for people with a deep interest in Middle Eastern culture and to create a dialogue between the academic community and the community of oriental dancers and musicians.
-
-					</p>
+					{{ introduction.body|replace({'<a href': '<a class="link" href'})|raw }}
 				</div>
 			</li>
 			<li>
@@ -468,28 +465,7 @@
 			</li>
 			<li><a href="#">Contacts</a>
 				<div class="person-detail contact-wrap">
-					<ul class="contacts c">
-						<li>
-							MAIN ORGANIZER<br>
-							Katerina Safrova<br>
-							00420 737 631 040<br>
-							<a href="mailto:katerina.safrova@gmail.com">katerina.safrova@gmail.com</a><br>
-							FB Katerina Shereen
-						</li>
-						<li>
-							ASSISTANT<br>
-							Mateja Mikulan<br>
-							0038 640 464 896<br>
-							<a href="mailto:info@nawar.si">info@nawar.si</a><br>
-							FB Mateja Mikulan
-						</li>
-						<li>
-							Barbora Cerna<br>
-							00420 226 222 800<br>
-							<a href="mailto:info@nawar.si">info@nawar.si</a><br>
-							FB Mateja Mikulan
-						</li>
-					</ul>
+					{{ contacts.body|replace({'<ul>': '<ul class="contacts c">', '<a href': '<a class="link" href'})|raw }}
 				</div>
 			</li>
 		</ul>
