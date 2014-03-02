@@ -69,6 +69,11 @@ $(function () {
 		$('html, body').animate({scrollTop: menu.offset().top}, 500);
 	});
 
+	('table td').each(function() {
+    	if($(this).find('a').length && !$(this).find('a').hasClass('no-detail')) {
+    		$(this).addClass('has-detail');
+    	}
+    });
 
    	var handleRegister = function(e) {
 		e.preventDefault();
