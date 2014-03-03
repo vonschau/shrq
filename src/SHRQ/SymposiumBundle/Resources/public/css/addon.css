@@ -23,3 +23,6 @@
 #menu nav .person-detail.venues {
 	padding: 0;
 }
+.errors {
+	background-color: red;
+}
