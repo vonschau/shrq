@@ -26,7 +26,7 @@ class RegistrationController extends Controller
         $formHandler = $this->get('fos_user.registration.form.handler');
         $confirmationEnabled = $this->container->getParameter('fos_user.registration.confirmation.enabled');
 
-        $process = $formHandler->process($confirmationEnabled);
+        $process = $formHandler->process(true);
         if ($process) {
             $user = $form->getData();
 
@@ -37,6 +37,17 @@ class RegistrationController extends Controller
             } else {
                 $authUser = true;
                 $route = 'fos_user_registration_confirmed';
+
+                $renderedLines = explode("\n", trim($renderedTemplate));
+                $subject = $renderedLines[0];
+                $body = implode("\n", array_slice($renderedLines, 1));
+
+                $message = \Swift_Message::newInstance()
+                    ->setSubject($subject)
+                    ->setFrom($fromEmail)
+                    ->setTo($toEmail)
+                    ->setBody($body);
+
             }
 
             $this->setFlash('fos_user_success', 'registration.flash.user_created');
@@ -53,7 +64,7 @@ class RegistrationController extends Controller
         return $this->get('templating')->renderResponse('FOSUserBundle:Registration:register.html.'.$this->getEngine(), array(
             'form' => $form->createView(),
         ));
-    }
+    }§
 
     /**
      * Tell the user to check his email provider
