@@ -39,9 +39,16 @@ $(function () {
 				.closest('.sub-1').addClass('opened')
 				.siblings('a').addClass('opened');
 
-			$('html, body').animate({scrollTop: that.offset().top}, 0);
+			$('html, body').animate({scrollTop: that.offset().top - 66}, 0);
 
 			e.preventDefault();
+		}
+	});
+
+	menu.find('.person-lessons > li > a').on('click', function() {
+		var l = $(this).next('.lesson-details');
+		if (l.attr('id')) {
+			$('table').find('a[href=#' + l.attr('id') + ']').click();
 		}
 	});
 
