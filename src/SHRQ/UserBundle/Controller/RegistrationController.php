@@ -64,7 +64,7 @@ class RegistrationController extends Controller
         return $this->get('templating')->renderResponse('FOSUserBundle:Registration:register.html.'.$this->getEngine(), array(
             'form' => $form->createView(),
         ));
-    }§
+    }
 
     /**
      * Tell the user to check his email provider
