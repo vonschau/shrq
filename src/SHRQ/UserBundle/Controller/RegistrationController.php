@@ -25,10 +25,15 @@ class RegistrationController extends Controller
         $form = $this->get('fos_user.registration.form');
         $formHandler = $this->get('fos_user.registration.form.handler');
         $confirmationEnabled = $this->container->getParameter('fos_user.registration.confirmation.enabled');
+        $userManager = $this->get('fos_user.user_manager');
 
         $process = $formHandler->process(true);
+
         if ($process) {
             $user = $form->getData();
+
+            $user->setEnabled(true);
+            $userManager->updateUser($user);
 
             $authUser = false;
             if ($confirmationEnabled) {
