@@ -38,11 +38,11 @@ class RegistrationFormType extends AbstractType
                 1 => '<img src="/bundles/shrqsymposium/img/ico-paypal.png" alt="">',
                 2 => '<img src="/bundles/shrqsymposium/img/ico-card.png" alt="">')))
             ->add('ticket_type', 'choice', array('expanded' => true, 'choices' => array(
-                1 => 'Symposium <br>program <br>(lectures, concert, <br>show) <span>€ 200</span>',
-                2 => 'Symposium <br>program <br> with JtE1 <span>€ 450</span>',
-                3 => 'JtE1 with Sahra <br>Saeeda <span>€ 250</span>',
+                1 => 'Symposium <br>program<br>(lectures, concert, <br>show) <span>€ 200</span>',
+                2 => 'Symposium program<br> & JtE 1 with<br>Sahra Saeeda <span>€ 450</span>',
+                3 => 'JtE 1 with Sahra <br>Saeeda <span>€ 250</span>',
                 4 => 'JtE 1 and JtE 2 with <br>Sahra Saeeda <span>€ 450</span>',
-                5 => '600 Eur - Whole <br>week program <span>€ 600</span>')))
+                5 => 'Symposium &<br>JtE 1 and 2 <span>€ 600</span>')))
         ;
     }
 

@@ -72,14 +72,38 @@ class DefaultController extends Controller
         $paymentExecution = new PaymentExecution();
         $paymentExecution->setPayerId($payerId);
 
-            $payment->execute($paymentExecution, $paypal->getApiContext());
+        $payment->execute($paymentExecution, $paypal->getApiContext());
+        $user->setPaid(true);
+        $user->setPaidDate(new \DateTime());
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        $this->getRequest()->getSession()->getFlashBag()->set('notice', 'Payment success.');
+
+        return $this->redirect($this->generateUrl('shrq_symposium_default_homepage'));
+    }
+
+    /**
+     * @Route("/payment-card-done")
+     * @Template()
+     */
+    public function cardDoneAction(Request $request)
+    {
+        $response = new WebPayResponse ();
+        $response->setPublicKey ('muzo.signing_test.pem');
+        $response->setResponseParams ($request->query->getAll());
+        $result = $response->verify ();
+
+        if ($result) {
             $user->setPaid(true);
             $user->setPaidDate(new \DateTime());
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
-
-            $this->getRequest()->getSession()->getFlashBag()->set('notice', 'Payment success.');
+        } else {
+            $this->getRequest()->getSession()->getFlashBag()->set('error', 'Payment error. Try again.');
+        }
 
         return $this->redirect($this->generateUrl('shrq_symposium_default_homepage'));
     }

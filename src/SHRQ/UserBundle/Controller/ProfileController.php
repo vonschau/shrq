@@ -172,5 +172,25 @@ class ProfileController extends Controller
         $ticket_types = array(1 => 'Symposium program', 2 => 'Symposium program + JtE1', 3 => 'JtE1', 4 => 'JtE1 + JtE2', 5 => 'Whole week program');
         $prices = array(1 => 200, 2 => 450, 3 => 250, 4 => 450, 5 => 600);
         $price = $prices[$user->getTicketType()];
+
+        $payment_id = 'RB'.rand(100000000, 999999999);
+
+        $request = new WebPayRequest ();
+        $request->setPrivateKey('private-key.pem', 'heslo');
+        $request->setWebPayUrl('https://test.3dsecure.gpwebpay.com/rb/order.do');
+        $request->setResponseUrl($this->generateUrl('shrq_symposium_default_cardDone', array(), true));
+        $request->setMerchantNumber(2740301073);
+        $request->setOrderInfo($payment_id,  /* webpay objednávka */
+                               $user->getId(), /* interní objednávka */
+                               $price);
+
+
+        $user->setPaymentId($payment_id);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
+        return $this->redirect($request->requestUrl ());
     }
 }
