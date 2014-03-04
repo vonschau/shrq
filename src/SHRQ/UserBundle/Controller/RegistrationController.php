@@ -176,7 +176,7 @@ class RegistrationController extends Controller
             $kernel = $this->get('kernel');
 
             $request = new WebPayRequest ();
-            $request->setPrivateKey($kernel->locateResource('@SHRQSymbposiumBundle/Resources/cert/shrq.pem'), 'shrq123');
+            $request->setPrivateKey($kernel->locateResource('@SHRQSymposiumBundle/Resources/cert/shrq.pem'), 'shrq123');
             $request->setWebPayUrl('https://test.3dsecure.gpwebpay.com/rb/order.do');
             $request->setResponseUrl($this->generateUrl('shrq_symposium_default_cardDone', array(), true));
             $request->setMerchantNumber(2740301073);
