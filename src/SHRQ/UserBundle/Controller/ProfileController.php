@@ -179,7 +179,7 @@ class ProfileController extends Controller
         $request = new WebPayRequest ();
         $request->setPrivateKey($kernel->locateResource('@SHRQSymposiumBundle/Resources/cert/shrq.pem'), 'heslo');
         $request->setWebPayUrl('https://test.3dsecure.gpwebpay.com/rb/order.do');
-        $request->setResponseUrl($this->generateUrl('shrq_symposium_default_cardDone', array(), true));
+        $request->setResponseUrl($this->generateUrl('shrq_symposium_default_carddone', array(), true));
         $request->setMerchantNumber(2740301073);
         $request->setOrderInfo($payment_id,  /* webpay objednávka */
                                $user->getId(), /* interní objednávka */
