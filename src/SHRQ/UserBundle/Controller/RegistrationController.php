@@ -16,7 +16,7 @@ use PayPal\Api\PayerInfo;
 use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
-use SHRQ\SymposiumBunle\WebPay\WebPayRequest
+use SHRQ\SymposiumBunle\WebPay\WebPayRequest;
 
 class RegistrationController extends Controller
 {
