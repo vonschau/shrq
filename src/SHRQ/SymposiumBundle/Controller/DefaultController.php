@@ -105,6 +105,7 @@ class DefaultController extends Controller
             $em->persist($user);
             $em->flush();
         } else {
+            die($request->query->get('PRCODE').'/'.$request->query->get('SRCODE'));
             $this->getRequest()->getSession()->getFlashBag()->set('error', 'Payment error. Try again.');
         }
 
