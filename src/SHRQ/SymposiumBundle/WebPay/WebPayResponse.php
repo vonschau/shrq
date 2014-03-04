@@ -1,5 +1,7 @@
 <?php
 
+namespace SHRQ\SymposiumBundle\WebPay;
+
 class WebPayResponse
 {
 	var $publicKey;
