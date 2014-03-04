@@ -175,7 +175,7 @@ class ProfileController extends Controller
         $prices = array(1 => 200, 2 => 450, 3 => 250, 4 => 450, 5 => 600);
         $price = $prices[$user->getTicketType()];
 
-        $payment_id = 'RB'.rand(100000000, 999999999);
+        $payment_id = rand(100000000, 999999999);
 
         $request = new WebPayRequest ();
         $request->setPrivateKey($kernel->locateResource('@SHRQSymposiumBundle/Resources/cert/shrq2.pem'), 'shrq123');

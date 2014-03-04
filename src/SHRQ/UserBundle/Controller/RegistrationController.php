@@ -171,7 +171,7 @@ class RegistrationController extends Controller
                 }
             }
         } elseif ($user->getPaymentType() === 2) {
-            $payment_id = 'RB'.rand(100000000, 999999999);
+            $payment_id = rand(100000000, 999999999);
 
             $kernel = $this->get('kernel');
 
