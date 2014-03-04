@@ -95,7 +95,7 @@ class DefaultController extends Controller
 
         $response = new WebPayResponse ();
         $response->setPublicKey ($kernel->locateResource('@SHRQSymposiumBundle/Resources/cert/muzo.signing_test.pem'));
-        $response->setResponseParams ($request->query->getAll());
+        $response->setResponseParams ($request->query->all());
         $result = $response->verify ();
 
         if ($result) {
