@@ -10,6 +10,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use PayPal\Api\Payment;
 use PayPal\Api\PaymentExecution;
+use SHRQ\SymposiumBundle\WebPay\WebPayResponse;
 
 class DefaultController extends Controller
 {
