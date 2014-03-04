@@ -172,12 +172,14 @@ class RegistrationController extends Controller
         } elseif ($user->getPaymentType() === 2) {
             $payment_id = 'RB'.rand(100000000, 999999999);
 
+            $kernel = $this->get('kernel');
+
             $request = new WebPayRequest ();
-            $request->setPrivateKey('private-key.pem', 'heslo');
+            $request->setPrivateKey($kernel->locateResource('@SHRQSymbposiumBundle/Resources/cert/shrq.pem'), 'shrq123');
             $request->setWebPayUrl('https://test.3dsecure.gpwebpay.com/rb/order.do');
             $request->setResponseUrl($this->generateUrl('shrq_symposium_default_cardDone', array(), true));
             $request->setMerchantNumber(2740301073);
-            $request->setOrderInfo($paymentId,  /* webpay objednávka */
+            $request->setOrderInfo($payment_id,  /* webpay objednávka */
                                    $user->getId(), /* interní objednávka */
                                    $price);
 

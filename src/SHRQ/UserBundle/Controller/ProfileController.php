@@ -163,6 +163,7 @@ class ProfileController extends Controller
      */
     public function cardAction()
     {
+        $kernel = $this->get('kernel');
         $user = $this->get('security.context')->getToken()->getUser();
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
@@ -174,6 +175,7 @@ class ProfileController extends Controller
         $price = $prices[$user->getTicketType()];
 
         $payment_id = 'RB'.rand(100000000, 999999999);
+
 
         $request = new WebPayRequest ();
         $request->setPrivateKey('private-key.pem', 'heslo');

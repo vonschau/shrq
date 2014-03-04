@@ -90,8 +90,10 @@ class DefaultController extends Controller
      */
     public function cardDoneAction(Request $request)
     {
+        $kernel = $this->get('kernel');
+
         $response = new WebPayResponse ();
-        $response->setPublicKey ('muzo.signing_test.pem');
+        $response->setPublicKey ($kernel->locateResource('@SHRQSymbposiumBundle/Resources/cert/muzo.signing_test.pem'));
         $response->setResponseParams ($request->query->getAll());
         $result = $response->verify ();
 
