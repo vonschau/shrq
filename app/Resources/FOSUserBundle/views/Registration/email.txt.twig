@@ -1,13 +1,34 @@
 {% block subject %}Welcome to the SHRQ Symposium!{% endblock %}
 {% block body_text %}
 {% autoescape false %}
-Hello {{ user.first_name }},
-
-you've just registered to the SHRQ Symposium on Middle Eastern Culture.
-
-
-Regards,
-the Team.
+Dear Madam/ Sir,
+ 
+your registration was successful and you are hereby a participant of the SHRQ
+Symposium on Middle Eastern Culture, which is taking place in Prague, Czech Republic
+in December 2014.
+ 
+Your user account credentials are:
+email: {{ user.email }}
+password: {{ user.password }}
+ 
+We advise you to keep this email for further reference as the login information will allow
+you to access the participant section on the shrq.eu website, where you will find further
+updates, changes and download links for maps, program etc.
+ 
+We very much appreciate your interest in the SHRQ Symposium on Middle Eastern
+culture and we are hoping that it will be an inspiring and memorable experience that will
+enrich your knowledge and create a new ground for a community interested in an
+ethnological research of Middle Eastern dance and music.
+ 
+Yours sincerely
+ 
+Katerina Shereen
+SHRQ Symposium director
+CEO of SHRQ charitable trust
+&
+SHRQ Symposium team
+ 
+http://www.shrq.eu
 {% endautoescape %}
 {% endblock %}
 {% block body_html %}{% endblock %}
