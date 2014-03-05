@@ -82,6 +82,33 @@ $(function () {
     	}
     });
 
+    $('body').on('click', '#menu > .closer', function() {
+    	$('#menu').remove();
+    	$('table').find('.opened-td').removeClass('opened-td');
+    });
+
+    fixeddate();
+
+    function fixeddate() {
+    	var dates = $('.dates'),
+	    	headposition = dates.offset().top;
+
+	    $(window).scroll(function() {
+
+	    	var scrolltop = $(window).scrollTop()
+
+	    	if(scrolltop > headposition) {
+	    		dates.addClass('fixed');
+	    	} else {
+	    		if(dates.hasClass('fixed')) {
+	    			dates.removeClass('fixed');
+	    		}
+	    	}
+
+	    });
+
+    }
+
    	var handleRegister = function(e) {
 		e.preventDefault();
 

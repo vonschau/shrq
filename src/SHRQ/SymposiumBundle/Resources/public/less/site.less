@@ -13,6 +13,10 @@ html, body {
   height: 100%;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
   background: #DEDFE0;
   margin: 0;
@@ -26,7 +30,8 @@ img {
 }
 
 .grid-1 {
-  width: 100/8%;
+  width: 12%;
+  margin-left: 1%;
 }
 
 .grid-2 {
@@ -75,10 +80,6 @@ a {
   text-decoration:none;
 }
 
-.errors {
-  background-color: red;
-}
-
 .page {
   width: 100%;
   max-width: @layout;
@@ -88,11 +89,13 @@ a {
     padding: 60/1920*100%;
     ul {
       // margin: 0 -2.5%;
-      padding-bottom: 24em;
+      max-width: 80%;
+      padding-bottom: 6em;
     }
     li {
       float: left;
-      width: 100/3%;
+      width: 24%;
+      margin-right: 8.3%;
       text-align: center;
     }
     img {
@@ -101,7 +104,7 @@ a {
     .symbol-01 {
       text-align: left;
       img {
-        top: 12em;
+        top: 2em;
       }
     }
     .symbol-02 {
@@ -113,7 +116,7 @@ a {
     .symbol-03 {
       text-align: right;
       img {
-        top: 22em;
+        top: 3em;
       }
     }
     form {
@@ -124,6 +127,7 @@ a {
       li {
         width: 25%;
         margin-left: -1px;
+        margin-right: 0;
         &:first-child {
           width: 50%;
           margin-left: 0;
@@ -149,11 +153,17 @@ a {
       button {
         background: @yellow;
         color: @black;
+        &:hover {
+          color: #fff;
+        }
       }
       a {
         text-decoration: none;
         background: @blue;
         color: @white;
+        &:hover {
+          color: #000;
+        }
       }
     }
   }
@@ -164,24 +174,40 @@ h1 {
   span {
     position: absolute;
     top: 0;
-    left: 40%;
+    left: 29%;
   }
 }
 
 #menu, #logged {
-  padding: 0 2em;
   background: @pink;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
-
+  margin-top: -1px;
+  position: relative;
+  z-index: 5;
+  > .closer {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 1.5%;
+    bottom: 5%;
+    cursor: pointer;
+    z-index: 10;
+    display: block;
+    background: url('../img/closer.png') 50% 50% no-repeat;
+  }
   nav {
     position: relative;
+    left: 1px;
     min-height: @navheight;
     a {
       text-decoration: none;
       display: block;
       padding: 0.5em;
       border: 1px solid @pink;
+      &:hover {
+        color: @blue;
+      }
       &.link {
         padding: 0.5em 0;
       }
@@ -220,12 +246,13 @@ h1 {
       top: 0;
       width: 100%;
       padding-top: 1.5em;
+      min-height: @navheight;
     }
     .person-detail {
       position: absolute;
       left: 100%;
       top: 0;
-      width: 400%;
+      width: 417%;
       padding-right: 100%;
       padding-top: 1.5em;
       border-left: 1px solid #000;
@@ -505,6 +532,18 @@ h1 {
 }
 
 #table {
+  position: relative;
+  padding-top: 33px;
+  .dates {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #DEDFE0;
+    z-index: 5;
+    &.fixed {
+      position: fixed;
+    }
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -512,6 +551,7 @@ h1 {
   th {
     font-weight: normal;
     border: 1px solid #000;
+    width: 25%;
   }
   th, td {
     padding: 0.5em;
@@ -533,6 +573,9 @@ h1 {
     &.date {
       font-size: 12/14em;
       text-align: center;
+      span {
+        font-size: 14/12em;
+      }
       td {
         border-bottom: 1px solid #DEDFE0;
         height: 2em;
@@ -553,6 +596,9 @@ h1 {
         color: @blue;
       }
     }
+    &.has-detail:hover {
+      background: @pink;
+    }
     &.no-right {
       border-right: 1px solid #DEDFE0 !important;
     }
@@ -560,12 +606,33 @@ h1 {
       display: block;
       position: relative;
       min-height: 11em;
+      > div {
+        float: right;
+        width: 50%;
+        &.label {
+          float: left;
+          padding-right: 5%;
+        }
+      }
+      &.small {
+        min-height: 0;
+      }
+      &.no-detail {
+        cursor: default;
+        span {
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
       span {
         color: @blue;
         display: block;
         position: absolute;
         bottom: 0;
         width: 100%;
+        text-align: left;
       }
     }
   }
