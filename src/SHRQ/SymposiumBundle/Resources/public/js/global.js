@@ -49,6 +49,8 @@ $(function () {
 		var l = $(this).next('.lesson-details');
 		if (l.attr('id')) {
 			$('table').find('a[href=#' + l.attr('id') + ']').click();
+		} else {
+			$('table').find('.opened-td').removeClass('.opened-td');
 		}
 	});
 
